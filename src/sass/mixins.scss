@@ -1,0 +1,31 @@
+/// Block Element
+/// @access public
+/// @param {String} $element - Element's name
+@mixin e($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+/// Block Modifier
+/// @access public
+/// @param {String} $modifier - Modifier's name
+@mixin m($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+
+// CSS Resets
+@mixin r_marginpadding {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin r_list {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}

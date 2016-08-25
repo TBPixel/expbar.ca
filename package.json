@@ -1,0 +1,20 @@
+{
+  "name": "expbar.ca",
+  "version": "1.0.0",
+  "description": "Build Tools",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-extname": "^0.2.2",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-live-server": "0.0.30",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
+  }
+}
