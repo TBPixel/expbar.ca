@@ -1,50 +1,49 @@
-.hero
+.hero   
+    // Layout & Spacing
     display: flex
     flex-wrap: wrap
-    padding-bottom: 12px
+    padding-bottom: 32px
+    // Backdrop
     background-color: $lightgrey
 
 
-    &:after
-        content: ''
-        position: relative
-        flex: 1
-        top: 32px
-        width: 0
-        height: 0
-        border-left: 20px solid transparent
-        border-right: 20px solid transparent
-
-        border-top: 20px solid $lightgrey
-
-
+    // Section Title
     +e('title')
+        // Fill Parent w/ spacing
         flex: 100%
         margin-top: 32px
         margin-bottom: 32px
+        // Style & Alignment
         font-family: $site-heading
         font-size: 48px
         text-align: center
         color: $softgrey
 
 
+    // Image Container
     +e('image')
+        // Fill half of parent & Center contents
         flex: 50%
         text-align: center
 
 
+    // Image SVG
     +e('svg')
+        // Fill half of parent & change color
         width: 50%
         height: 50%
         fill: $softgrey
 
 
-
+    // Text Content
     +e('content')
+        // Fill other half of parent
         flex: 50%
 
 
+    // Context-text
     +e('suggestion')
+        // Styling & Weight
         font-family: $body
         font-weight: 400
         font-size: 14px
@@ -52,95 +51,117 @@
         color: $grey
 
 
+    // Heading for showcased item
     +e('heading')
+        // Spacing
         margin-top: 0
         margin-bottom: 32px
+        // Styles
         font-family: $heading
         font-weight: 300
         font-size: 48px
-        text-decoration: underline
+        text-decoration: underline // Heading is a link
         color: $grey
 
 
+    // Call to action Container
     +e('cta')
+        // Fill new row of parent
         flex: 100%
         margin-top: 32px
-
+        // Positioning for Absolute Psuedo-element
         position: relative
 
-
+    
+    // Call to Action Link
     +e('calltoaction')
+        // Sizing & Spacing
         display: block
         margin: 0 auto
         padding: 24px 16px
         max-width: 20%
-
+        // Positioning & Layer in-front of Pseudo-element
         position: relative
         z-index: 1
-
+        // Style Container
         border: 1px solid $grey
         border-radius: 4px
-
+        // Style Text
         font-family: $heading
         font-weight: 700
         font-size: 18px
         text-align: center
         text-decoration: none
+        text-transform: uppercase
         color: $grey
 
-
+        // Hover Effects
         &:hover,
         &:focus,
         &:active
             color: $lightgrey
-
+            
+            // Make Psuedo-element Visible
             &:before
                 opacity: 1
 
-
+        
+        // Psuedo-Element Background
         &:before
+            // Hacky - Used to treat Psuedo like a regular element
             content: ''
-
+            // Box Modal
             display: block
-
+            // Position & Fill to Parent (.calltoaction)
             position: absolute
             top: 0
             left: 0
             width: 100%
             height: 100%
+            // Layer behind parent
             z-index: -1
-
+            // Background Color
             background-color: $softblack
-
+            // Animation
             opacity: 0
             transition: opacity 150ms
 
 
-
+    // Link Styling
     +e('link')
+        // Clear Default Properties
         color: inherit
         text-decoration: none
 
         &:hover,
         &:focus,
         &:active
+            // Highlight & Show Underline
             color: $softblack
             text-decoration: underline
 
+    
+    // Quote Container Margin & Padding Clear
     +e('quote')
         +r_marginpadding
 
 
+    // Citation
     +e('cite')
+        // Box Modal & Spacing
         display: block
         margin-top: 8px
         margin-left: 32px
+        // Text Styling
         font-size: 14px
         color: $grey
         
 
+    // Quote Tagline
     +e('tagline')
+        // Clear Margin & Padding
         +r_marginpadding
+        // Text Styling
         font-family: $body
         font-weight: 400
         font-size: 18px

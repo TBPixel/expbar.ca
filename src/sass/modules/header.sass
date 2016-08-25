@@ -1,23 +1,31 @@
 // Site Header
 .header
+    // Layout
     display: flex
+    // Backdrop
     background-color: $lightgrey
+
 
     // Logo Container
     +e('logo')
+        // Spacing
         display: block
         margin: 4px 16px
 
+
     // Logo Image File
     +e('svg')
+        // SVG Size Constraints
         display: block
         height: 30px
+        // Styling of Logo
         stroke: $grey
         fill: $grey
 
         &:hover,
         &:focus,
         &:active
+            // Hover Effects
             stroke: $softblack
             fill: $softblack
 
@@ -34,6 +42,7 @@
     +e('item')
         display: inline-block
         position: relative
+
         color: $grey
 
         // Performant Background Color Transition
@@ -66,13 +75,16 @@
 
     // Links inside list items
     +e('link')
+        // Set stage size
         box-sizing: border-box
         display: block
         padding: 10px 16px
         height: 100%
+        // Places itself in-front of the psuedo-element
         position: relative
+        z-index: 2
+        // Styling & Look
         font-family: $heading
         font-weight: 600
         text-decoration: none
         color: inherit
-        z-index: 2
