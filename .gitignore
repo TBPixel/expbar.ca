@@ -22,10 +22,6 @@ $RECYCLE.BIN/
 *.lnk
 
 
-# Build Folders
-dist
-
-
 ### Sass ###
 .sass-cache/
 *.css.map
