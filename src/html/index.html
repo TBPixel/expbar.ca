@@ -145,14 +145,14 @@
 
                 <!-- List of Boardgames -->
                 <article class="boardgames__content">
-                   
+
                     <!-- List of Boardgames by Group -->
                     <ul class="boardgames__list boardgames__list--metalist">
 
                         <!-- Group Title -->
                         <li class="boardgames__item boardgames__item--list">
 
-                            <h3 class="boardgames__category">Adult Tabletop</h3>
+                            <h3 class="boardgames__category">Mature</h3>
                             <!-- Group List -->
                             <ul class="boardgames__list">
                                 <li class="boardgames__item">Cards Against Humanity</li>
@@ -162,7 +162,7 @@
                         <!-- Group Title -->
                         <li class="boardgames__item boardgames__item--list">
 
-                            <h3 class="boardgames__category">Long-Term Tabletop</h3>
+                            <h3 class="boardgames__category">Long-Term</h3>
                             <!-- Group List -->
                             <ul class="boardgames__list">
                                 <li class="boardgames__item">Talisman</li>
@@ -173,7 +173,7 @@
                         <!-- Group Title -->
                         <li class="boardgames__item boardgames__item--list">
 
-                            <h3 class="boardgames__category">Family Friendly Tabletop</h3>
+                            <h3 class="boardgames__category">Family Friendly</h3>
                             <!-- Group List -->
                             <ul class="boardgames__list">
                                 <li class="boardgames__item">Apples-to-Apples</li>
@@ -183,7 +183,7 @@
                         <!-- Group Title -->
                         <li class="boardgames__item boardgames__item--list">
 
-                            <h3 class="boardgames__category">Classic Tabletop</h3>
+                            <h3 class="boardgames__category">Classic</h3>
                             <!-- Group List -->
                             <ul class="boardgames__list">
                                 <li class="boardgames__item">Settlers of Catan</li>
@@ -196,25 +196,53 @@
 
             <!-- About Us -->
             <section class="about">
+
+                <!-- Section Title -->
                 <h2 class="about__title">We aim to redefine 'social gaming.'</h2>
 
+                <!-- Section Main Content -->
                 <p class="about__text">Eat delicious items crafted by our expert chefs! Drink themed beverages after your favourite games! Enjoy social mixers, Game Industry Q&amp;A sessions, and various other special events throughout the week! Get hyped for tournaments with awesome prizes! Watch high-level matches in the pro-gaming scene! Literally 'Level Up' as you visit with our experience points reward system!</p>
             </section>
 
             <!-- Location -->
             <section class="location">
-                
+
+                <!-- Section Title -->
+                <h2 class="location__title"></h2>
+
+                <!-- Google Maps Integration -->
+                <div class="location__map" id="map" style="pointer-events: none;"></div>
             </section>
         </main>
 
         <!-- Site Footer Content -->
-        <footer class="footer" style="height:640px;">
+        <footer class="footer">
             
         </footer>
     </div>
 
     <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        function initMap() {
+
+            var mapDiv = document.getElementById('map');
+
+            var myLatLng = {lat: 49.282368, lng: -123.111155};
+
+            var map = new google.maps.Map(mapDiv, {
+                center: myLatLng,
+                zoom: 18
+            });
+
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'EXP Restaurant + Bar!'
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtuqBEgDNXlD7s0mwuu2zwUWsU9ay2fbI&callback=initMap" async defer></script>
     <script src="./js/scripts.min.js"></script>
 </body>
 
