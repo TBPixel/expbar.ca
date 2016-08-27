@@ -1,0 +1,92 @@
+// Board Games Section
+.boardgames
+    // Layout
+    display: flex
+    flex-wrap: wrap
+    // Spacing
+    margin-top: 64px
+    margin-bottom: 64px
+
+
+    // Section Title
+    +e('title')
+        // Spacing
+        flex: 100%
+        margin-top: 0px
+        margin-bottom: 48px
+        // Styles & Alignment
+        text-align: center
+        font-family: $heading
+        font-weight: 700
+        font-size: 32px
+        color: $softgrey
+
+
+
+    // D20 Image Container
+    +e('image')
+        // Sizing
+        flex: 33%
+        // Alignment
+        text-align: center
+
+    // D20 Image
+    +e('svg')
+        // Sizing
+        width: 50%
+        height: 50%
+        // Re-Coloring
+        stroke: $softgrey
+
+
+
+    // Section Text Content
+    +e('content')
+        // Sizing
+        flex: 67%
+
+
+    // List Styles
+    +e('list')
+        // Clear List Styles
+        +r_list
+        // Layout
+        display: flex
+        flex-wrap: wrap
+
+
+    // List Item Styles
+    +e('item')
+        // Sizing
+        box-sizing: border-box
+        display: block
+        flex: 100%
+        // Spacing
+        padding-top: 16px
+        padding-left: 16px
+        // Styling
+        font-family: $body
+        font-weight: 400
+        font-size: 18px
+        color: $softblack
+
+        // Styles & Reset for lists inside other lists ( categories )
+        +m('list')
+            // Sizing of Metalists
+            flex: 50%
+            // Spacing of Metalists
+            margin-bottom: 48px
+            padding-top: 0
+            padding-left: 0
+
+    
+    // Category Titles
+    +e('category')
+        // Spacing
+        margin-top: 0
+        margin-bottom: 0
+        // Styling
+        font-family: $heading
+        font-weight: 300
+        font-size: 28px
+        color: $grey
