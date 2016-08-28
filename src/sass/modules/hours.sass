@@ -1,0 +1,52 @@
+.hours
+    // Spacing
+    padding-top: 64px
+    padding-bottom: 64px
+    // Style
+    background-image: url('../images/svg/ic_access_time_black_24px.svg')
+    background-repeat: no-repeat
+    background-size: 50%
+    background-position: -9% 20%
+
+
+    +e('title')
+        // Spacing
+        margin-top: 0
+        margin-bottom: 48px
+        // Sizing
+        width: 50%
+        margin-left: auto
+        // Styling
+        font-family: $heading
+        font-weight: 700
+        font-size: 32px
+        color: $softgrey
+
+
+    +e('weekdays')
+        // Clear default spacings
+        +r_marginpadding
+        // Sizing
+        display: block
+        width: 50%
+        margin-left: auto
+        margin-bottom: 16px
+        // Styling
+        font-family: $heading
+        font-weight: 300
+        font-size: 28px
+        color: $grey
+
+
+    +e('time')
+        // Spacing
+        margin-left: auto
+        margin-bottom: 48px
+        // Sizing
+        display: block
+        width: 50%
+        // Styles
+        font-family: $body
+        font-weight: 400
+        font-size: 18px
+        color: $softblack
