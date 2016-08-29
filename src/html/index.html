@@ -67,6 +67,8 @@
         /* Header */
         .header {
             /* Sizing & Display Model */
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             width: 100%;
             /* Position */
@@ -130,6 +132,7 @@
                         background-color: #E7E7E7;
                         z-index: 0;
                         opacity: 0;
+                        -webkit-transition: opacity 166ms;
                         transition: opacity 166ms;
                     }
                         /* Navigation List Item Link */
@@ -150,8 +153,11 @@
         /* Landing Page Hero */
         .hero {
             /* Layout */
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
             /* Spacing */
             padding-top: 64px;
             padding-bottom: 64px;
@@ -161,7 +167,9 @@
             /* Title Text for Landing Page Hero */
             .hero__title {
                 /* Flexbox Fill Parent */
-                flex: 100%;
+                -webkit-box-flex: 100%;
+                    -ms-flex: 100%;
+                        flex: 100%;
                 /* Spacing */
                 margin-top: 0;
                 margin-bottom: 48px;
@@ -175,7 +183,9 @@
             /* Hero Image Container */
             .hero__image {
                 /* Flexbox Sizing */
-                flex: 40%;
+                -webkit-box-flex: 40%;
+                    -ms-flex: 40%;
+                        flex: 40%;
                 /* Align svg contents to center */
                 text-align: center;
             }
@@ -193,10 +203,19 @@
             .hero__content {
                 /* Sizing */
                 box-sizing: border-box;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
-                flex: 60%;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
+                -webkit-box-flex: 60%;
+                    -ms-flex: 60%;
+                        flex: 60%;
                 /* Spacing */
                 padding-right: 16px;
                 padding-left: 16px;
@@ -230,7 +249,9 @@
 
             .hero__cta {
                 /* Fill new row of parent */
-                flex: 100%;
+                -webkit-box-flex: 100%;
+                    -ms-flex: 100%;
+                        flex: 100%;
                 margin-top: 48px;
                 /* Positioning for Absolute Psuedo-element */
                 position: relative;
@@ -257,8 +278,15 @@
                     text-decoration: none;
                     text-transform: uppercase;
                     color: #EEE;
-
+                    
+                    -webkit-transform: none;
+                    
+                            transform: none;
+                    -webkit-transition: -webkit-transform 128ms;
+                    transition: -webkit-transform 128ms;
                     transition: transform 128ms;
+                    transition: transform 128ms, -webkit-transform 128ms;
+                    will-change: transform;
                 }
 
                     /* Hover Effects */
@@ -266,7 +294,8 @@
                     .hero__cta-button:focus,
                     .hero__cta-button:active {
                         border-color: #777;
-                        transform: translateY(1px);
+                        -webkit-transform: translateY(1px);
+                                transform: translateY(1px);
                     }
                         
                         /* Make Psuedo-element Visible */
@@ -295,13 +324,18 @@
                         background-color: #777;
                         /* Animation */
                         opacity: 0;
+                        -webkit-transition: opacity 128ms;
                         transition: opacity 128ms;
+                        will-change: opacity;
                     }
     </style>
     <!-- Cache-able Stylesheet -->
-    <link href="./css/styles.min.css" rel="stylesheet">
+    <link href="./css/styles.min.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link href="./css/styles.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Da%7CLato:700,300%7COpen+Sans:300,400,400i,600" rel="stylesheet">
+    </noscript>
     <!-- Google Fonts CDN -->
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Da%7CLato:700,300%7COpen+Sans:300,400,400i,600" rel="stylesheet">
 
 
     <!--
@@ -348,7 +382,7 @@
                 <ul class="nav__list">
                     <!-- Nav Link Items -->
                     <li class="nav__item"><a class="nav__link" href="./">Home</a></li>
-                    <li class="nav__item"><a class="nav__link" href="./menu/">Menu</a></li>
+                    <li class="nav__item"><a class="nav__link" href="./menu/" itemprop="menu">Menu</a></li>
                 </ul>
             </nav>
         </header>
@@ -510,27 +544,9 @@
 
     <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script>
-        function initMap() {
-
-            var mapDiv = document.getElementById('map');
-
-            var myLatLng = {lat: 49.282368, lng: -123.111155};
-
-            var map = new google.maps.Map(mapDiv, {
-                center: myLatLng,
-                zoom: 18
-            });
-
-            var marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map,
-                title: 'EXP Restaurant + Bar!'
-            });
-        }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtuqBEgDNXlD7s0mwuu2zwUWsU9ay2fbI&callback=initMap" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
     <script src="./js/scripts.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtuqBEgDNXlD7s0mwuu2zwUWsU9ay2fbI&callback=initMap" async defer></script>
 </body>
 
 </html>

@@ -2,13 +2,14 @@
     'use strict'; // Ensure Strict mode enabled
 
     // Load Build Process Modules
-    var gulp        =   require ( 'gulp' ),
-        liveserver  =   require ( 'gulp-live-server' ),
-        plumber     =   require ( 'gulp-plumber' ),
-        htmlmin     =   require ( 'gulp-htmlmin' ),
-        extname     =   require ( 'gulp-extname' ),
-        sass        =   require ( 'gulp-sass' ),
-        uglify      =   require ( 'gulp-uglify' );
+    var gulp            =   require ( 'gulp' ),
+        liveserver      =   require ( 'gulp-live-server' ),
+        plumber         =   require ( 'gulp-plumber' ),
+        htmlmin         =   require ( 'gulp-htmlmin' ),
+        extname         =   require ( 'gulp-extname' ),
+        sass            =   require ( 'gulp-sass' ),
+        autoprefixer    =   require ( 'gulp-autoprefixer' ),
+        uglify          =   require ( 'gulp-uglify' );
 
 
     // Server Task
@@ -48,6 +49,10 @@
             .pipe ( sass ({
                 outputStyle: 'compressed',
                 includePaths: ['src/sass/']
+            }) )
+            .pipe( autoprefixer ({
+                browsers: ['last 2 versions', 'ie >= 10', '> 1%'],
+                cascade: false
             }) )
             .pipe ( extname ( 'min.css' ) )
             .pipe ( gulp.dest ( 'dist/css' ) );
