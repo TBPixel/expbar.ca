@@ -1,5 +1,5 @@
 ( function () {
-    'use strict'; // Ensure Strict JS
+    'use strict'; // Ensure Strict mode enabled
 
     // Load Build Process Modules
     var gulp        =   require ( 'gulp' ),
@@ -30,7 +30,8 @@
 
         return gulp.src ( 'src/html/**/*.html' )
             .pipe ( htmlmin ({
-                collapseWhitespace: true
+                collapseWhitespace: true,
+                removeComments: true
             }) )
             .pipe ( gulp.dest('dist') );
     });
