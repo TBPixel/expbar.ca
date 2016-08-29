@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="html" lang="en">
+<html class="html" lang="en" itemscope itemtype="http://schema.org/Restaurant">
 
 <head>
     <!--
@@ -58,6 +58,7 @@
         /* Body, Site Heading & Navigation */
         .body {
             margin: 0;
+            margin-top: 39px;
             padding: 0;
             background-color: #F7F7F7;
         }
@@ -65,7 +66,15 @@
 
         /* Header */
         .header {
+            /* Sizing & Display Model */
             display: flex;
+            width: 100%;
+            /* Position */
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2; /* Ensure Placed 'above' all other elements on page */
+            /* Styles */
             background-color: #EEE;
         }
             /* Header Logo */

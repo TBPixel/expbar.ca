@@ -31,7 +31,9 @@
         return gulp.src ( 'src/html/**/*.html' )
             .pipe ( htmlmin ({
                 collapseWhitespace: true,
-                removeComments: true
+                removeComments: true,
+                minifyCSS: true,
+                minifyJS: true
             }) )
             .pipe ( gulp.dest('dist') );
     });
