@@ -33,7 +33,8 @@
             .pipe ( htmlmin ({
                 collapseWhitespace: true,
                 removeComments: true,
-                minifyCSS: true
+                minifyCSS: true,
+                minifyJS: true
             }) )
             .pipe ( gulp.dest('dist') );
     });

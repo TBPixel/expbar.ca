@@ -27,14 +27,44 @@
 
 
     +e('item')
-        flex: 50%
+        box-sizing: border-box
+        flex: 100%
         margin-bottom: 48px
         text-align: center
+        padding: 16px
 
         @media only screen and (min-width: 1000px)
             flex: 33.333%
 
 
     +e('image')
+        display: block
+        margin: 0 auto
         max-width: 100%
         max-height: 100%
+
+
+    +e('text')
+        display: inline-block
+        margin-top: 16px
+
+        font-family: $heading
+        font-weight: 700
+        font-size: 19px
+        text-decoration: none
+        color: $primary
+
+        &:hover,
+        &:focus,
+        &:active
+            text-decoration: underline
+
+
+    +e('date')
+        display: inline-block
+        margin-top: 8px
+        
+        font-family: $body
+        font-size: 14px
+        font-weight: 400
+        color: $primary-grey
