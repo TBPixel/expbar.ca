@@ -53,8 +53,6 @@
     -->
     <!-- CRITICAL CSS -->
     <style>
-        /* Inline of Navigation & Hero Area CSS Only */
-
         /* Body, Site Heading & Navigation */
         .body {
             margin: 0;
@@ -110,13 +108,13 @@
                     /* Navigation List Item - On Hover */
                     .nav__item:hover,
                     .nav__item:focus,
-                    .nav__item:active { color: #5f7d9a; }
+                    .nav__item:active { color: #3F8FDD; }
                     /* Navigation List Item - On Hover - 'Before' Psuedo-Element*/
-                    .nav__item:hover:before,
-                    .nav__item:focus:before,
-                    .nav__item:active:before { opacity: 1; }
+                    .nav__item:hover::before,
+                    .nav__item:focus::before,
+                    .nav__item:active::before { will-change: opacity; opacity: 1; }
                     /* Navigation List Item - 'Before' Psuedo-Element*/
-                    .nav__item:before {
+                    .nav__item::before {
                         position: absolute;
                         top: 0;
                         left: 0;
@@ -125,9 +123,10 @@
                         content: '';
                         background-color: #f5f7f9;
                         z-index: 0;
+
                         opacity: 0;
-                        -webkit-transition: opacity 166ms;
-                        transition: opacity 166ms;
+                        -webkit-transition: opacity 166ms ease-in;
+                        transition: opacity 166ms ease-in;
                     }
                         /* Navigation List Item Link */
                         .nav__link {
@@ -135,7 +134,9 @@
                             display: block;
                             padding: 10px 16px;
                             height: 100%;
+
                             position: relative;
+
                             font-family: "Lato",sans-serif;
                             font-weight: 600;
                             text-decoration: none;
@@ -143,9 +144,9 @@
                         }
     </style>
     <!-- Cache-able Stylesheet -->
-    <link href="./css/styles.min.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+    <link href="../css/styles.min.css" rel="preload" as="style" onload="this.rel='stylesheet'">
     <noscript>
-        <link href="./css/styles.min.css" rel="stylesheet">
+        <link href="../css/styles.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Baloo+Da%7CLato:700,300%7COpen+Sans:300,400,400i,600" rel="stylesheet">
     </noscript>
     <!-- Google Fonts CDN -->
@@ -154,12 +155,12 @@
     <!--
         Favicons
     -->
-    <link href="/apple-touch-icon.png?v=m2dL6a6Gw8"     rel="apple-touch-icon"      sizes="180x180">
-    <link href="/favicon-32x32.png?v=m2dL6a6Gw8"        rel="icon" type="image/png" sizes="32x32">
-    <link href="/favicon-16x16.png?v=m2dL6a6Gw8"        rel="icon" type="image/png" sizes="16x16">
-    <link href="/manifest.json?v=m2dL6a6Gw8"            rel="manifest">
-    <link href="/safari-pinned-tab.svg?v=m2dL6a6Gw8"    rel="mask-icon">
-    <link href="/favicon.ico?v=m2dL6a6Gw8"              rel="shortcut icon">
+    <link href="../apple-touch-icon.png?v=m2dL6a6Gw8"     rel="apple-touch-icon"      sizes="180x180">
+    <link href="../favicon-32x32.png?v=m2dL6a6Gw8"        rel="icon" type="image/png" sizes="32x32">
+    <link href="../favicon-16x16.png?v=m2dL6a6Gw8"        rel="icon" type="image/png" sizes="16x16">
+    <link href="../manifest.json?v=m2dL6a6Gw8"            rel="manifest">
+    <link href="../safari-pinned-tab.svg?v=m2dL6a6Gw8"    rel="mask-icon">
+    <link href="../favicon.ico?v=m2dL6a6Gw8"              rel="shortcut icon">
     <meta name="theme-color" content="#ffffff">
 
 
@@ -207,14 +208,103 @@
 
         <!-- Site Footer -->
         <footer class="footer">
-            TO-DO: Footer Content
+
+            <!-- Charity List -->
+            <section class="footer__section">
+
+                <!-- List Title -->
+                <h4 class="footer__title">Charity Programs</h4>
+                
+                <!-- List Items -->
+                <ul class="footer__list">
+                    <li class="footer__item"><a class="footer__link" href="#">EXP Boost</a></li>
+                    <li class="footer__item"><a class="footer__link" href="http://extra-life.org/">Extra Life</a></li>
+                </ul>
+            </section>
+
+            <!-- Events List -->
+            <section class="footer__section">
+
+                <!-- List Title -->
+                <h4 class="footer__title">On-Going Events</h4>
+
+                    <!-- List Items -->
+                <ul class="footer__list">
+                    <li class="footer__item"><a class="footer__link" href="#">There is no easy mode</a></li>
+                    <li class="footer__item"><a class="footer__link" href="#">Critical Art</a></li>
+                    <li class="footer__item"><a class="footer__link" href="#">Smash Bros. Tournaments</a></li>
+                    <li class="footer__item"><a class="footer__link" href="#">Rocket League Tournaments</a></li>
+                    <li class="footer__item"><a class="footer__link" href="#">Rumble Arena</a></li>
+                    <li class="footer__item"><a class="footer__link" href="#">Salty Tuesdays</a></li>
+                </ul>   
+            </section>
+
+            <!-- EXP Online Community -->
+            <section class="footer__section">
+
+                <!-- List Title -->
+                <h4 class="footer__title">Social Media</h4>
+
+                <!-- List Items -->
+                <ul class="footer__list">
+                    <li class="footer__item">
+                        <a class="footer__link" href="https://www.facebook.com/expbar">
+                            <img class="footer__icon" src="../images/svg/social-icons/facebook.svg" alt="Facebook pictogram">Facebook
+                        </a>
+                    </li>
+                    <li class="footer__item">
+                        <a class="footer__link" href="https://twitter.com/expbar">
+                            <img class="footer__icon" src="../images/svg/social-icons/twitter.svg" alt="Twitter pictogram">Twitter
+                        </a>
+                    </li>
+                    <li class="footer__item">
+                        <a class="footer__link" href="https://plus.google.com/u/0/111322866517194957392/posts">
+                            <img class="footer__icon" src="../images/svg/social-icons/google+.svg" alt="Google+ pictogram">Google+
+                        </a>
+                    </li>
+                    <li class="footer__item">
+                        <a class="footer__link" href="http://www.linkedin.com/company/exp-restaurant-bar">
+                            <img class="footer__icon" src="../images/svg/social-icons/linkedin.svg" alt="LinkedIn pictogram">LinkedIn
+                        </a>
+                    </li>
+                    <li class="footer__item">
+                        <a class="footer__link" href="http://twitch.tv/expbar">
+                            <img class="footer__icon" src="../images/svg/social-icons/twitch.svg" alt="Twitch pictogram">Twitch
+                        </a>
+                    </li>
+                    <li class="footer__item">
+                        <a class="footer__link" href="http://www.youtube.com/user/EXPRestaurantAndBar">
+                            <img class="footer__icon" src="../images/svg/social-icons/youtube.svg" alt="Youtube pictogram">Youtube
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Affiliates & Sponsors -->
+            <section class="footer__section">
+
+                <!-- List Title -->
+                <h4 class="footer__title">Affiliates &amp; Sponsors</h4>
+
+                <!-- List Items -->
+                <ul class="footer__list">
+                    <li class="footer__item"><a class="footer__link" href="https://www.asus.com/Monitors/VG248QE/">ASUS</a></li>
+                    <li class="footer__item"><a class="footer__link" href="http://www.ncix.com/article/soc-champion.htm">GIGABYTE</a></li>
+                    <li class="footer__item"><a class="footer__link" href="http://www.kantoliving.com/">Kanto Living</a></li>
+                    <li class="footer__item"><a class="footer__link" href="http://wcgeeksversusnerds.com/">Geeks Vs. Nerds Vancouver</a></li>
+                    <li class="footer__item"><a class="footer__link" href="http://www.gamedeals.ca/">Gamedeals Video Games</a></li>
+                    <li class="footer__item"><a class="footer__link" href="https://www.strategiesgames.ca/strategies/">Strategies Games &amp; Hobbies</a></li>
+                    <li class="footer__item"><a class="footer__link" href="http://smartypantz.ca/">Smarty Pantz Escape Rooms</a></li>
+                    <li class="footer__item"><a class="footer__link" href="http://www.thefictionals.com/">The Fictionals</a></li>
+                    <li class="footer__item"><a class="footer__link" href="http://northwaygames.com/">Northway Games</a></li>
+                </ul>
+            </section>
         </footer>
     </div>
 
     <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
-    <script src="./js/scripts.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtuqBEgDNXlD7s0mwuu2zwUWsU9ay2fbI&callback=initMap" async defer></script>
+    <script src="../js/scripts.min.js"></script>
 </body>
 
 </html>

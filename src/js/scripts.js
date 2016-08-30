@@ -24,10 +24,16 @@
                 mapView.changeMapState ( 'auto' );
             });
         },
+
+        init: function () {
+
+            if ( mapView.locationDOM !== null && mapView.mapDOM !== null ) { mapView.addEventListeners (); }
+            else return;
+        }
     };
 
     // Init mapView
-    mapView.addEventListeners ();
+    mapView.init ();
     
 
     // Load Webfonts

@@ -1,4 +1,8 @@
+// Footer Area
 .footer
+    // Display
+    display: flex
+    justify-content: space-around
     // Sizing
     width: 100%
     // Spacing
@@ -6,4 +10,49 @@
     padding-bottom: 64px
     // Styling
     background-color: $black
-    color: $lightgrey
+
+    
+    // Footer Lists
+    +e('list')
+        // Clear List Defaults
+        +r_list
+
+
+    // Footer List Titles
+    +e('title')
+        // Spacing
+        margin-top: 0
+        margin-bottom: 32px
+        // Styles
+        font-family: $heading
+        font-weight: 300
+        font-size: 18px
+        color: $primary-softgrey
+
+
+    // Footer List Items
+    +e('item')
+        // Spacing
+        margin-bottom: 16px
+
+
+    // Footer List Items Link
+    +e('link')
+        // Styles
+        font-family: $body
+        font-weight: 400
+        font-size: 14px
+        text-decoration: none
+        color: $primary-lightgrey
+
+        &:hover,
+        &:focus,
+        &:active
+            text-decoration: underline
+
+
+    // Footer List Items Link Icon
+    +e('icon')
+        display: inline-block
+        margin-right: 9px
+        width: 14px
