@@ -58,9 +58,8 @@
         /* Body, Site Heading & Navigation */
         .body {
             margin: 0;
-            margin-top: 39px;
             padding: 0;
-            background-color: #F7F7F7;
+            background-color: #f5f7f9;
         }
 
 
@@ -71,13 +70,8 @@
             display: -ms-flexbox;
             display: flex;
             width: 100%;
-            /* Position */
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 2; /* Ensure Placed 'above' all other elements on page */
             /* Styles */
-            background-color: #EEE;
+            background-color: #3F8FDD;
         }
             /* Header Logo */
             .header__logo {
@@ -88,15 +82,15 @@
             .header__svg {
                 display: block;
                 height: 30px;
-                stroke: #999;
-                fill: #999;
+                stroke: #eaeff3;
+                fill: #eaeff3;
             }
                 /* Header Logo SVG - On Hover */
                 .header__svg:hover,
                 .header__svg:focus,
                 .header__svg:active {
-                    stroke: #777;
-                    fill: #777;
+                    stroke: #f5f7f9;
+                    fill: #f5f7f9;
                 }
 
 
@@ -111,16 +105,16 @@
                 .nav__item {
                     display: inline-block;
                     position: relative;
-                    color: #777;
+                    color: #eaeff3;
                 }
                     /* Navigation List Item - On Hover */
                     .nav__item:hover,
                     .nav__item:focus,
-                    .nav__item:active { color:#444; }
+                    .nav__item:active { color: #5f7d9a; }
                     /* Navigation List Item - On Hover - 'Before' Psuedo-Element*/
                     .nav__item:hover:before,
                     .nav__item:focus:before,
-                    .nav__item:active:before { opacity:1; }
+                    .nav__item:active:before { opacity: 1; }
                     /* Navigation List Item - 'Before' Psuedo-Element*/
                     .nav__item:before {
                         position: absolute;
@@ -129,7 +123,7 @@
                         width: 100%;
                         height: 100%;
                         content: '';
-                        background-color: #E7E7E7;
+                        background-color: #f5f7f9;
                         z-index: 0;
                         opacity: 0;
                         -webkit-transition: opacity 166ms;
@@ -184,7 +178,7 @@
         <header class="header">
 
             <!-- Logo Container -->
-            <a class="header__logo" id="logo" href="./" title="EXP Bar + Restaurant">
+            <a class="header__logo" id="logo" href="../" title="EXP Bar + Restaurant">
                 
                 <!-- Logo SVG -->
                 <svg class="header__svg" id="EXP_Logo" data-name="EXP Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98.07 47">
@@ -200,8 +194,8 @@
             <nav class="nav">
                 <ul class="nav__list">
                     <!-- Nav Link Items -->
-                    <li class="nav__item"><a class="nav__link" href="./">Home</a></li>
-                    <li class="nav__item"><a class="nav__link" href="./menu/" itemprop="menu">Menu</a></li>
+                    <li class="nav__item"><a class="nav__link" href="../">Home</a></li>
+                    <li class="nav__item"><a class="nav__link" href="../menu/" itemprop="menu">Menu</a></li>
                 </ul>
             </nav>
         </header>
@@ -218,7 +212,6 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
     <script src="./js/scripts.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtuqBEgDNXlD7s0mwuu2zwUWsU9ay2fbI&callback=initMap" async defer></script>

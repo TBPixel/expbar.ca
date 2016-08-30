@@ -58,9 +58,8 @@
         /* Body, Site Heading & Navigation */
         .body {
             margin: 0;
-            margin-top: 39px;
             padding: 0;
-            background-color: #F7F7F7;
+            background-color: #f5f7f9;
         }
 
 
@@ -71,13 +70,8 @@
             display: -ms-flexbox;
             display: flex;
             width: 100%;
-            /* Position */
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 2; /* Ensure Placed 'above' all other elements on page */
             /* Styles */
-            background-color: #EEE;
+            background-color: #3F8FDD;
         }
             /* Header Logo */
             .header__logo {
@@ -88,15 +82,15 @@
             .header__svg {
                 display: block;
                 height: 30px;
-                stroke: #999;
-                fill: #999;
+                stroke: #eaeff3;
+                fill: #eaeff3;
             }
                 /* Header Logo SVG - On Hover */
                 .header__svg:hover,
                 .header__svg:focus,
                 .header__svg:active {
-                    stroke: #777;
-                    fill: #777;
+                    stroke: #f5f7f9;
+                    fill: #f5f7f9;
                 }
 
 
@@ -111,29 +105,30 @@
                 .nav__item {
                     display: inline-block;
                     position: relative;
-                    color: #777;
+                    color: #eaeff3;
                 }
                     /* Navigation List Item - On Hover */
                     .nav__item:hover,
                     .nav__item:focus,
-                    .nav__item:active { color:#444; }
+                    .nav__item:active { color: #5f7d9a; }
                     /* Navigation List Item - On Hover - 'Before' Psuedo-Element*/
-                    .nav__item:hover:before,
-                    .nav__item:focus:before,
-                    .nav__item:active:before { opacity:1; }
+                    .nav__item:hover::before,
+                    .nav__item:focus::before,
+                    .nav__item:active::before { will-change: opacity; opacity: 1; }
                     /* Navigation List Item - 'Before' Psuedo-Element*/
-                    .nav__item:before {
+                    .nav__item::before {
                         position: absolute;
                         top: 0;
                         left: 0;
                         width: 100%;
                         height: 100%;
                         content: '';
-                        background-color: #E7E7E7;
+                        background-color: #f5f7f9;
                         z-index: 0;
+
                         opacity: 0;
-                        -webkit-transition: opacity 166ms;
-                        transition: opacity 166ms;
+                        -webkit-transition: opacity 166ms ease-in;
+                        transition: opacity 166ms ease-in;
                     }
                         /* Navigation List Item Link */
                         .nav__link {
@@ -141,7 +136,9 @@
                             display: block;
                             padding: 10px 16px;
                             height: 100%;
+
                             position: relative;
+
                             font-family: "Lato",sans-serif;
                             font-weight: 600;
                             text-decoration: none;
@@ -162,7 +159,7 @@
             padding-top: 64px;
             padding-bottom: 64px;
             /* Background */
-            background-color: #EEE;
+            background-color: #3F8FDD;
         }
             /* Title Text for Landing Page Hero */
             .hero__title {
@@ -178,7 +175,7 @@
                 font-size: 48px;
                 text-align: center;
                 letter-spacing: 1px;
-                color: #BBB;
+                color: #eaeff3;
             }
             /* Hero Image Container */
             .hero__image {
@@ -195,8 +192,8 @@
                     width: 60%;
                     height: 60%;
                     /* Styling */
-                    stroke: #BBB;
-                    fill: #BBB;
+                    stroke: #eaeff3;
+                    fill: #eaeff3;
                 }
 
             /* Hero Text Content */
@@ -229,7 +226,7 @@
                     font-family: "Lato", sans-serif;
                     font-weight: 300;
                     font-size: 28px;
-                    color: #777;
+                    color: #f5f7f9;
                 }
                 /* Hero Text Content Paragraph */
                 .hero__text {
@@ -243,7 +240,7 @@
                     font-size: 18px;
                     text-indent: 16px;
                     line-height: 1.6;
-                    color: #777;
+                    color: #f5f7f9;
                 }
 
 
@@ -268,8 +265,8 @@
                     position: relative;
                     z-index: 1;
                     /* Style Container */
-                    border-bottom: 2px solid #777;
-                    background-color: #999;
+                    border-bottom: 2px solid #5b9b84;
+                    background-color: #33DFA2;
                     /* Style Text */
                     font-family: "Lato", sans-serif;
                     font-weight: 700;
@@ -277,37 +274,33 @@
                     text-align: center;
                     text-decoration: none;
                     text-transform: uppercase;
-                    color: #EEE;
-                    
-                    -webkit-transform: none;
-                    
-                            transform: none;
-                    -webkit-transition: -webkit-transform 128ms;
-                    transition: -webkit-transform 128ms;
-                    transition: transform 128ms;
-                    transition: transform 128ms, -webkit-transform 128ms;
-                    will-change: transform;
+                    color: #f5f9f8;
+
+                    -webkit-transition: -webkit-transform 128ms ease-in;
+                    transition: -webkit-transform 128ms ease-in;
+                    transition: transform 128ms ease-in;
+                    transition: transform 128ms, -webkit-transform 128ms ease-in;
                 }
 
                     /* Hover Effects */
                     .hero__cta-button:hover,
                     .hero__cta-button:focus,
                     .hero__cta-button:active {
-                        border-color: #777;
+                        color: #5b9b84;
+                        border-color: #3F8FDD;
+                        will-change: transform;
                         -webkit-transform: translateY(1px);
                                 transform: translateY(1px);
                     }
                         
                         /* Make Psuedo-element Visible */
-                        .hero__cta-button:hover:after,
-                        .hero__cta-button:focus:after,
-                        .hero__cta-button:active:after {
-                            opacity: 1;
-                        }
+                        .hero__cta-button:hover::before,
+                        .hero__cta-button:focus::before,
+                        .hero__cta-button:active::before { will-change: opacity; opacity: 1; }
 
                     
                     /* Psuedo-Element Background */
-                    .hero__cta-button:after {
+                    .hero__cta-button::before {
                         /*// Hacky - Used to treat Psuedo like a regular element*/
                         content: '';
                         /* Box Modal */
@@ -321,12 +314,11 @@
                         /* Layer behind parent */
                         z-index: -1;
                         /* Background Color */
-                        background-color: #777;
+                        background-color: #f5f9f8;
                         /* Animation */
                         opacity: 0;
-                        -webkit-transition: opacity 128ms;
-                        transition: opacity 128ms;
-                        will-change: opacity;
+                        -webkit-transition: opacity 128ms ease-in;
+                        transition: opacity 128ms ease-in;
                     }
     </style>
     <!-- Cache-able Stylesheet -->
@@ -543,7 +535,6 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
     <script src="./js/scripts.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtuqBEgDNXlD7s0mwuu2zwUWsU9ay2fbI&callback=initMap" async defer></script>

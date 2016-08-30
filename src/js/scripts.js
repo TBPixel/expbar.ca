@@ -1,41 +1,42 @@
 // JQuery DOM Ready Initialzie
-$( function () {
+( function () {
     'use strict';
 
-    // Maps are inactive initially
-    var $locDOM = $( '.location' );
-    var $mapDOM = $locDOM.find ( '#map' );
+    // Prevents Google Maps overtaking scroll unless user selects area
+    var mapView = {
+        locationDOM: document.querySelector ( '.location' ),
+        mapDOM: document.getElementById ( 'map' ),
+        state: 'none',
 
+        // Sets the pointer-events for the map
+        changeMapState: function ( value ) {
 
-    function setMapState ( v ) {
+            mapView.mapDOM.style.pointerEvents = value;
+        },
 
-        v = v || null;
+        // Adds the listeners for functionality
+        addEventListeners: function () {
+            document.addEventListener ( 'click', function() { mapView.changeMapState ( 'none' ); });
 
-        var css,
-            state = $mapDOM.css( 'pointer-events' );
+            mapView.locationDOM.addEventListener ( 'click', function ( e ) {
 
+                e.stopPropagation ();
+                mapView.changeMapState ( 'auto' );
+            });
+        },
+    };
 
-        if ( typeof v === 'string' )
-        {
-            css = v;
+    // Init mapView
+    mapView.addEventListeners ();
+    
+
+    // Load Webfonts
+    WebFont.load({
+        google: {
+            families: ['Baloo Da', 'Lato:700,300', 'Open Sans:300,400,400i,600']
         }
-        else
-        {
-            css = (state === 'none') ? 'auto' : 'none';
-        }
-
-        $mapDOM.css ( 'pointer-events', css );
-    }
-
-
-    $( document ).on ( 'click', function () { setMapState ( 'none' ); });
-
-    $locDOM.on( 'click', function ( e ) {
-
-        e.stopPropagation ();
-        setMapState ( 'auto' );
     });
-});
+} ());
 
 
 
@@ -118,14 +119,6 @@ $( function () {
         w.loadCSS = loadCSS;
     }
 }( typeof global !== "undefined" ? global : this ));
-
-
-// Load Webfonts
-WebFont.load({
-    google: {
-        families: ['Baloo Da', 'Lato:700,300', 'Open Sans:300,400,400i,600']
-    }
-});
 
 
 // Initialize Map
