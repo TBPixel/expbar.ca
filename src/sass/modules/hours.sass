@@ -1,14 +1,20 @@
 .hours
     // Box Model
     display: flex
-    flex-wrap: wrap
+    flex-flow: column nowrap
+    align-items: center
     // Contain SVG
     position: relative
     overflow: hidden
     // Spacing
-    margin-top: 112px
+    margin-top: 0
     padding-top: 64px
     padding-bottom: 64px
+
+    @media only screen and (min-width: 1200px)
+        margin-top: 112px
+        flex-flow: row wrap
+        align-items: flex-start
 
 
     +e('title')
@@ -23,20 +29,32 @@
 
 
     +e('image')
-        flex: 50%
+        flex: 100%
+        text-align: center
+
+        @media only screen and (min-width: 1200px)
+            flex: 50%
 
 
     +e('svg')
-        position: absolute
-        top: -10%
-        left: -5%
-        width: 150%
-        height: 150%
+        position: relative
+        width: 60%
+        height: 60%
         fill: $primary-softgrey
 
+        @media only screen and (min-width: 1200px)
+            position: absolute
+            top: -10%
+            left: -5%
+            width: 150%
+            height: 150%
+    
 
     +e('schedule')
-        flex: 50%
+        flex: 100%
+
+        @media only screen and (min-width: 1200px)
+            flex: 50%
 
 
     +e('weekdays')

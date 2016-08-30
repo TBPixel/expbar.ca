@@ -42,6 +42,12 @@
             families: ['Baloo Da', 'Lato:700,300', 'Open Sans:300,400,400i,600']
         }
     });
+
+
+    // Initialize bLazy
+    var bLazy = new Blazy({
+        selector: 'img'
+    });
 } ());
 
 
@@ -125,6 +131,9 @@
         w.loadCSS = loadCSS;
     }
 }( typeof global !== "undefined" ? global : this ));
+
+
+
 
 
 // Initialize Map

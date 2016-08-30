@@ -1,0 +1,40 @@
+.events
+    // Spacing
+    margin-top: 64px
+    margin-bottom: 64px
+
+    // Section Title
+    +e('title')
+        margin-top: 0px
+        margin-bottom: 48px
+        // Styles & Alignment
+        font-family: $heading
+        font-weight: 700
+        font-size: 32px
+        text-align: center
+        letter-spacing: 1px
+        color: $primary-softgrey
+
+
+    // Section List
+    +e('list')
+        // Clear List Defaults
+        +r_list
+        // Display Model
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+
+
+    +e('item')
+        flex: 50%
+        margin-bottom: 48px
+        text-align: center
+
+        @media only screen and (min-width: 1000px)
+            flex: 33.333%
+
+
+    +e('image')
+        max-width: 100%
+        max-height: 100%

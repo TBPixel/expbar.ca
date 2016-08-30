@@ -180,21 +180,24 @@
             /* Hero Image Container */
             .hero__image {
                 /* Flexbox Sizing */
-                -webkit-box-flex: 40%;
-                    -ms-flex: 40%;
-                        flex: 40%;
+                -webkit-box-flex: 100%;
+                    -ms-flex: 100%;
+                        flex: 100%;
+                /* Spacing */
+                padding-bottom: 48px;
                 /* Align svg contents to center */
                 text-align: center;
             }
                 /* Hero Image inline-SVG */
                 .hero__svg {
                     /* Sizing */
-                    width: 60%;
-                    height: 60%;
+                    width: 33%;
+                    height: 33%;
                     /* Styling */
                     stroke: #eaeff3;
                     fill: #eaeff3;
                 }
+
 
             /* Hero Text Content */
             .hero__content {
@@ -210,9 +213,9 @@
                 -webkit-box-pack: center;
                     -ms-flex-pack: center;
                         justify-content: center;
-                -webkit-box-flex: 60%;
-                    -ms-flex: 60%;
-                        flex: 60%;
+                -webkit-box-flex: 100%;
+                    -ms-flex: 100%;
+                        flex: 100%;
                 /* Spacing */
                 padding-right: 16px;
                 padding-left: 16px;
@@ -227,11 +230,12 @@
                     font-weight: 300;
                     font-size: 28px;
                     color: #f5f7f9;
+                    text-align: center;
                 }
                 /* Hero Text Content Paragraph */
                 .hero__text {
                     /* Clear Margins */
-                    margin: 0;
+                    margin: 0 auto;
                     /* Sizing Restrictions */
                     max-width: 550px;
                     /* Styles */
@@ -260,7 +264,7 @@
                     display: block;
                     margin: 0 auto;
                     padding: 24px 16px;
-                    max-width: 20%;
+                    width: 300px;
                     /* Positioning & Layer in-front of Pseudo-element */
                     position: relative;
                     z-index: 1;
@@ -270,7 +274,7 @@
                     /* Style Text */
                     font-family: "Lato", sans-serif;
                     font-weight: 700;
-                    font-size: 18px;
+                    font-size: 19px;
                     text-align: center;
                     text-decoration: none;
                     text-transform: uppercase;
@@ -291,6 +295,38 @@
                         -webkit-transform: translateY(2px);
                                 transform: translateY(2px);
                     }
+
+        
+        /* Responsive Hero Query 1100px */
+        @media only screen and (min-width: 1100px) {
+
+            /* Hero Image Area */
+            .hero__image {
+                /* Flexbox Sizing */
+                -webkit-box-flex: 40%;
+                -ms-flex: 40%;
+                flex: 40%;
+                /* Spacing */
+                padding-bottom: 0;
+            }
+                .hero__svg {
+                    /* Sizing */
+                    width: 60%;
+                    height: 60%;
+                }
+
+
+            .hero__content {
+                /* Flex Sizing */
+                -webkit-box-flex: 60%;
+                        -ms-flex: 60%;
+                            flex: 60%;
+            }
+                .hero__heading { text-align: left; }
+                .hero__text {
+                    margin: 0;
+                }
+        }
     </style>
     <!-- Cache-able Stylesheet -->
     <link href="./css/styles.min.css" rel="preload" as="style" onload="this.rel='stylesheet'">
@@ -464,6 +500,67 @@
                 </article>
             </section>
 
+
+            <!-- Events Listing -->
+            <section class="events">
+
+                <!-- Events Section Title -->
+                <h2 class="events__title">Join the community with one of our events</h2>
+                
+                <!-- List of Ongoing Events -->
+                <ul class="events__list">
+                    <li class="events__item">
+                        <img    class="events__image"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                data-src="./images/events/there-is-no-easy-mode.png"
+                                alt="There is no easy mode - Trivia Nights"
+                                width="250"
+                                height="250">
+                    </li>
+                    <li class="events__item">
+                        <img    class="events__image"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                data-src="./images/events/critical-art.png"
+                                alt="Critical Art" 
+                                width="250" 
+                                height="250">
+                    </li>
+                    <li class="events__item">
+                        <img    class="events__image"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                data-src="./images/events/smash-bros-tournaments.png"
+                                alt="Smash Bros. Tournaments" 
+                                width="250" 
+                                height="250">
+                    </li>
+                    <li class="events__item">
+                        <img    class="events__image"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                data-src="./images/events/rocket-league-tournaments.png"
+                                alt="Rocket League Tournaments"
+                                width="250" 
+                                height="250">
+                    </li>
+                    <li class="events__item">
+                        <img    class="events__image"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                data-src="./images/events/rumble-arena.png"
+                                alt="Rumble Arena" 
+                                width="250" 
+                                height="250">
+                    </li>
+                    <li class="events__item">
+                        <img    class="events__image"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                data-src="./images/events/salty-tuesdays.png"
+                                alt="Salty Tuesdays" 
+                                width="250" 
+                                height="250">
+                    </li>
+                </ul>
+            </section>
+
+
             <!-- About Us - Description Text -->
             <section class="about">
 
@@ -526,23 +623,6 @@
                     <li class="footer__item"><a class="footer__link" href="#">EXP Boost</a></li>
                     <li class="footer__item"><a class="footer__link" href="http://extra-life.org/">Extra Life</a></li>
                 </ul>
-            </section>
-
-            <!-- Events List -->
-            <section class="footer__section">
-
-                <!-- List Title -->
-                <h4 class="footer__title">On-Going Events</h4>
-
-                <!-- List Items -->
-                <ul class="footer__list">
-                    <li class="footer__item"><a class="footer__link" href="#">There is no easy mode</a></li>
-                    <li class="footer__item"><a class="footer__link" href="#">Critical Art</a></li>
-                    <li class="footer__item"><a class="footer__link" href="#">Smash Bros. Tournaments</a></li>
-                    <li class="footer__item"><a class="footer__link" href="#">Rocket League Tournaments</a></li>
-                    <li class="footer__item"><a class="footer__link" href="#">Rumble Arena</a></li>
-                    <li class="footer__item"><a class="footer__link" href="#">Salty Tuesdays</a></li>
-                </ul>   
             </section>
 
             <!-- EXP Online Community -->
@@ -610,6 +690,7 @@
 
     <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <script src="https://cdn.jsdelivr.net/blazy/1.6.2/blazy.min.js"></script>
     <script src="./js/scripts.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtuqBEgDNXlD7s0mwuu2zwUWsU9ay2fbI&callback=initMap" async defer></script>
 </body>
