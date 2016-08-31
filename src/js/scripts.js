@@ -152,6 +152,11 @@ function initMap()
 
 
 // Events Section of Page
+/*
+
+    JAVASCRIPT CODE TO BE USED IN DEMO ONLY
+
+    
 var eventData = {
     eventsDOM: document.querySelector ( '.events__list' ),
     list: [],
@@ -238,3 +243,4 @@ var eventData = {
 
 // Fetch and add event data to page
 // eventData.getData ( eventData.appendData );
+*/

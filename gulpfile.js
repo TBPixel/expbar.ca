@@ -29,7 +29,7 @@
     // HTML Minification Task
     gulp.task ( 'htmlminify', function () {
 
-        return gulp.src ( 'src/html/**/*.html' )
+        return gulp.src ( 'src/html/**/*.{html,php}' )
             .pipe ( htmlmin ({
                 collapseWhitespace: true,
                 removeComments: true,
@@ -84,7 +84,7 @@
     gulp.task ( 'watch', function () {
 
         // Watch HTML file changes
-        gulp.watch ( 'src/html/**/*.html', ['htmlminify'] );
+        gulp.watch ( 'src/html/**/*.{html,php}', ['htmlminify'] );
 
         // Watch for sass files to update and re-run sass-task
         gulp.watch ( 'src/sass/**/**/*.{sass,scss}', ['styles'] );
@@ -97,5 +97,5 @@
     });
 
     // Run Gulp Task
-    gulp.task ( 'default', ['serve', 'htmlminify', 'styles', 'scripts', 'fileMove', 'watch'] );
+    gulp.task ( 'default', ['htmlminify', 'styles', 'scripts', 'fileMove', 'watch'] );
 }) ();

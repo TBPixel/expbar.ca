@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html class="html" lang="en" itemscope itemtype="http://schema.org/Restaurant">
 
@@ -357,7 +358,11 @@
 
 <body class="body">
     <!-- Facebook Graph API Init -->
+    <!--
     <script>
+    
+        JAVASCRIPT CODE TO BE USED IN DEMO ONLY
+
         window.fbAsyncInit = function() {
             FB.init({
                 appId      : '199372583810994',
@@ -374,7 +379,9 @@
             js.src = "//connect.facebook.net/en_US/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
+
     </script>
+    -->
 
     <!-- Page Wrapper -->
     <div class="wrapper">
@@ -528,7 +535,25 @@
                 
                 <!-- List of Ongoing Events -->
                 <ul class="events__list">
+                    <?php
+                        require_once '../private/fb-app.php';
 
+                        $request_url = 'https://graph.facebook.com/expbar/events?fields=name,start_time&limit=3&' . $access_token;
+                        $result = file_get_contents ( $request_url );
+
+                        $result = json_decode ( $result );
+                        
+                        $array = $result->data;
+
+                        foreach ( $array as $value )
+                        {
+                            $date = date_create ( $value->start_time );
+                    ?>
+                    <li class="events__item">
+                        <a class="events__link" href="https://www.facebook.com/events/<?php echo $value->id; ?>"><?php echo $value->name; ?></a>
+                        <time class="events__date" datetime="<?php echo $value->start_time; ?>"><?php echo date_format ( $date,"m-d-Y" ); ?></time>
+                    </li>
+                    <?php } ?>
                 </ul>
             </section>
 
