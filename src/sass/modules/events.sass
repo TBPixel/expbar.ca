@@ -1,10 +1,14 @@
+// Events Section Styles
 .events
     // Spacing
-    margin-top: 64px
-    margin-bottom: 64px
+    margin-left: 8px
+    margin-right: 8px
+    padding-top: 64px
+    padding-bottom: 64px
 
     // Section Title
     +e('title')
+        // Spacing
         margin-top: 0px
         margin-bottom: 48px
         // Styles & Alignment
@@ -22,49 +26,120 @@
         +r_list
         // Display Model
         display: flex
+        flex-direction: row
         flex-wrap: wrap
         justify-content: center
-
-
-    +e('item')
-        box-sizing: border-box
-        flex: 100%
+        // Spacing
         margin-bottom: 48px
-        text-align: center
-        padding: 16px
+        
+        // Modify Display on larger screens
+        @media only screen and (min-width: 1200px)
+            flex-wrap: nowrap
+            align-items: stretch
 
+
+    // Section List Item
+    +e('item')
+        // Box Model
+        box-sizing: border-box
+        // Flex Properties
+        display: flex
+        align-items: center
+        // Sizing
+        flex: 0 1 90%
+        // Spacing
+        margin-left: 8px
+        margin-right: 8px
+        margin-bottom: 16px
+        // Contain Link
+        position: relative
+        // Styles
+        border: 1px solid $primary-lightgrey
+        border-left: 4px solid $primary
+        text-align: center
+        padding: 16px 16px 16px 0
+
+        // Modify Flex on larger screens
         @media only screen and (min-width: 1000px)
+            flex: 0 1 67%
+
+        // Modify flex on even larger screens
+        @media only screen and (min-width: 1200px)
             flex: 33.333%
 
 
-    +e('image')
-        display: block
-        margin: 0 auto
-        max-width: 100%
-        max-height: 100%
+    // Section List Item Link
+    +e('link')
+        // Display Model
+        display: flex
+        // Fill Parent
+        position: absolute
+        top: 0
+        left: 0
+        // Sizing
+        width: 100%
+        height: 100%
 
-
-    +e('text')
-        display: inline-block
-        margin-top: 16px
-
-        font-family: $heading
-        font-weight: 700
-        font-size: 19px
-        text-decoration: none
-        color: $primary
-
+        // Performant background color effect
         &:hover,
         &:focus,
         &:active
-            text-decoration: underline
+            &::before
+                will-change: opacity
+                opacity: 1
+
+        // Use Psuedo-Element as background color change
+        &::before
+            // Render as block
+            content: ''
+            // Position
+            position: absolute
+            top: 0
+            left: 0
+            z-index: -1
+            // Sizing
+            width: 100%
+            height: 100%
+            // Styles
+            background-color: $primary-lightgrey
+            // Animation
+            opacity: 0
+            transition: opacity 166ms ease-in
 
 
+    // Section List Item Date
     +e('date')
+        // Box Model
         display: block
-        margin-top: 8px
-        
-        font-family: $body
-        font-size: 14px
-        font-weight: 400
+        // Flex Item cannot grow
+        flex: 0
+        // Spacing
+        padding-right: 16px
+        padding-left: 16px
+        // Styles
+        font-family: $heading
+        font-size: 19px
+        font-weight: 700
         color: $primary-grey
+
+    
+    // Section List Item Text
+    +e('text')
+        // Styles
+        font-family: $body
+        font-weight: 400
+        font-size: 19px
+        text-decoration: none
+        color: $softblack
+
+
+// Section List Item Icon
+.material-icons.events__icon
+    // Box model
+    display: block
+    // Flex Item can Grow
+    flex: 1
+    // Styles
+    text-align: right
+    font-size: 48px
+    color: $primary-softgrey

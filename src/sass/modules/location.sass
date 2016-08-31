@@ -1,24 +1,27 @@
+// Location Section Styles
 .location
     // Fill Wrapper & Set Height
     width: 100%
     height: 640px
+    // Contain Absolute Positioned Title
     position: relative
     
-
+    
+    // Location Title
     +e('title')
         // Clear Default Margins
         +r_marginpadding
         // Sizing
         box-sizing: border-box
         max-width: 50%
+        // Spacing
         padding: 8px
         padding-right: 48px
         // Fill Parent
         position: absolute
-        // top: 8px
         right: 0
         // Position Above Map
-        z-index: 2
+        z-index: 1
         // Styling
         font-family: $heading
         font-weight: 700
@@ -28,10 +31,11 @@
         background-color: $primary-lightgrey
 
 
+    // Location Map-Container Div
     +e('map')
         // Fill Parent
         width: 100%
         height: 100%
-        // Place behind text
+        // Position Behind Title
         position: relative
-        z-index: 1
+        z-index: 0

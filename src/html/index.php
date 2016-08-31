@@ -527,6 +527,17 @@
             </section>
 
 
+            <!-- About Us - Description Text -->
+            <section class="about">
+
+                <!-- Section Title -->
+                <h2 class="about__title">We aim to redefine 'social gaming'</h2>
+
+                <!-- Section Main Content -->
+                <p class="about__text">Eat delicious items crafted by our expert chefs! Drink themed beverages after your favourite games! Enjoy social mixers, Game Industry Q&amp;A sessions, and various other special events throughout the week! Get hyped for tournaments with awesome prizes! Watch high-level matches in the pro-gaming scene! Literally Level Up as you visit with our experience points reward system!</p>
+            </section>
+
+
             <!-- Events Listing -->
             <section class="events">
 
@@ -547,26 +558,20 @@
 
                         foreach ( $array as $value )
                         {
+                            if ( time () > strtotime ( $value->start_time ) ) { continue; }
+
                             $date = date_create ( $value->start_time );
                     ?>
                     <li class="events__item">
-                        <a class="events__link" href="https://www.facebook.com/events/<?php echo $value->id; ?>"><?php echo $value->name; ?></a>
-                        <time class="events__date" datetime="<?php echo $value->start_time; ?>"><?php echo date_format ( $date,"m-d-Y" ); ?></time>
+                        <a class="events__link" href="https://www.facebook.com/events/<?php echo $value->id; ?>"></a>
+                        <time class="events__date" datetime="<?php echo $value->start_time; ?>"><?php echo date_format ( $date,"d M" ); ?></time>
+                        <strong class="events__text"><?php echo preg_replace('/[\[{\(].*[\]}\)]/U' , '', $value->name); ?></strong>
+                        <i class="material-icons events__icon">chevron_right</i>
                     </li>
                     <?php } ?>
                 </ul>
             </section>
 
-
-            <!-- About Us - Description Text -->
-            <section class="about">
-
-                <!-- Section Title -->
-                <h2 class="about__title">We aim to redefine 'social gaming'</h2>
-
-                <!-- Section Main Content -->
-                <p class="about__text">Eat delicious items crafted by our expert chefs! Drink themed beverages after your favourite games! Enjoy social mixers, Game Industry Q&amp;A sessions, and various other special events throughout the week! Get hyped for tournaments with awesome prizes! Watch high-level matches in the pro-gaming scene! Literally Level Up as you visit with our experience points reward system!</p>
-            </section>
 
             <!-- Hours of Operation -->
             <section class="hours">

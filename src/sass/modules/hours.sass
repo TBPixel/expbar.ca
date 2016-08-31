@@ -1,3 +1,4 @@
+// Hours Section
 .hours
     // Box Model
     display: flex
@@ -11,12 +12,14 @@
     padding-top: 64px
     padding-bottom: 64px
 
+    // Adjust Spacing & Flex Properties on larger screens
     @media only screen and (min-width: 1200px)
-        margin-top: 112px
+        margin-top: 64px
         flex-flow: row wrap
         align-items: flex-start
 
-
+    
+    // Section Title
     +e('title')
         // Spacing
         margin-top: 0
@@ -27,36 +30,49 @@
         font-size: 32px
         color: $primary-softgrey
 
-
+    
+    // Section Image ( svg container )
     +e('image')
         flex: 100%
         text-align: center
-
+        
+        // Adjust size of container on larger screens
         @media only screen and (min-width: 1200px)
             flex: 50%
 
 
+    // Section Image SVG
     +e('svg')
+        // Place "below" other elements on page
         position: relative
+        z-index: -1
+        // Sizing
         width: 60%
         height: 60%
+        // Styles
         fill: $primary-softgrey
 
+        // Overfill parent on larger screens
         @media only screen and (min-width: 1200px)
+            // Positioning
             position: absolute
             top: -10%
             left: -5%
+            // Sizing
             width: 150%
             height: 150%
     
 
+    // Section Schedule group
     +e('schedule')
         flex: 100%
-
+        
+        // Adjust size on larger screens
         @media only screen and (min-width: 1200px)
             flex: 50%
 
 
+    // Section Schedule Weekdays Text
     +e('weekdays')
         // Clear default spacings
         +r_marginpadding
@@ -71,6 +87,7 @@
         color: $primary-grey
 
 
+    // Section Schedule Times Text
     +e('time')
         // Spacing
         margin-left: auto

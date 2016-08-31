@@ -39,7 +39,7 @@
     // Load Webfonts
     WebFont.load({
         google: {
-            families: ['Baloo Da', 'Lato:700,300', 'Open Sans:300,400,400i,600']
+            families: ['Baloo Da', 'Lato:700,300', 'Open Sans:300,400,400i,600', 'Material Icons']
         }
     });
 
