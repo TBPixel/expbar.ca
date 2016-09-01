@@ -549,7 +549,7 @@
                     <?php
                         require_once '../private/fb-app.php';
 
-                        $request_url = 'https://graph.facebook.com/expbar/events?fields=name,start_time&limit=3&' . $access_token;
+                        $request_url = 'https://graph.facebook.com/expbar/events?fields=name,start_time,cover&limit=3&' . $access_token;
                         $result = file_get_contents ( $request_url );
 
                         $result = json_decode ( $result );
@@ -558,12 +558,13 @@
 
                         foreach ( $array as $value )
                         {
-                            if ( time () > strtotime ( $value->start_time ) ) { continue; }
+                            if ( (time () - (60 * 60 * 24) ) > strtotime ( $value->start_time ) ) { continue; }
 
                             $date = date_create ( $value->start_time );
                     ?>
                     <li class="events__item">
                         <a class="events__link" href="https://www.facebook.com/events/<?php echo $value->id; ?>"></a>
+                        <img class="events__image" src="<?php echo $value->cover->source; ?>" alt="<?php echo $value->name; ?>">
                         <time class="events__date" datetime="<?php echo $value->start_time; ?>"><?php echo date_format ( $date,"d M" ); ?></time>
                         <strong class="events__text"><?php echo preg_replace('/[\[{\(].*[\]}\)]/U' , '', $value->name); ?></strong>
                         <i class="material-icons events__icon">chevron_right</i>

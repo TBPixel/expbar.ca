@@ -1,0 +1,191 @@
+// Menu Section
+.menu
+    // Spacing
+    padding-top: 64px
+    padding-bottom: 64px
+
+    &:first-child
+        padding-top: 0
+
+
+    // Menu Section Title
+    +e('title')
+        // Spacing
+        margin-top: 0
+        margin-bottom: 16px
+        // Styles
+        font-family: $site-heading
+        font-size: 48px
+        text-align: center
+        color: $accent
+
+
+    +e('group')
+        margin-bottom: 96px
+
+
+    // Menu Section Group Heading
+    +e('group-heading')
+        // Spacing
+        margin-top: 0
+        margin-bottom: 96px
+        // Styles
+        font-family: $heading
+        font-weight: 300
+        font-size: 32px
+        text-align: center
+        color: $primary-grey
+
+
+    // Menu Section Group List
+    +e('list')
+        // Clear List Styles
+        +r_list
+        // Box Model
+        display: flex
+        flex-wrap: wrap
+        justify-content: flex-start
+        // Spacing
+        padding-left: 64px
+
+        +m('optional')
+            display: block
+            padding-left: 16px
+
+    
+    +e('item')
+        // Box Model
+        box-sizing: border-box
+        // Spacing
+        margin-bottom: 96px
+        padding-right: 64px
+        // Flex Sizing
+        flex: 100%
+
+        @media only screen and (min-width: 1100px)
+            flex: 0 1 50%
+
+        &:last-child
+            margin-bottom: 0
+
+
+        +m('optional')
+            // flex: 100%
+            padding-right: 0
+            margin-bottom: 12px
+
+
+        +m('choice')
+            // flex: 0 1 auto
+            display: inline-block
+            padding-right: 8px
+            margin-bottom: 8px
+            
+            // All items in choice list, excluding the last
+            &:not(:last-child) > .menu__item-name--optional::after
+                content: ','
+
+
+    +e('item-name')
+        // Flex Sizing
+        // flex: 1
+        display: inline-block
+        // Spacing
+        margin-top: 0
+        margin-bottom: 0
+        // Styles
+        font-family: $heading
+        font-weight: 700
+        font-size: 28px
+        color: $primary-grey
+
+
+        +m('optional')
+            font-family: $body
+            font-weight: 400
+            font-size: 19px
+
+
+        +m('choice')
+            color: $softblack
+
+
+
+    +e('item-price')
+        // Flex Sizing
+        // flex: 0 1 50%
+        float: right
+        // Styles
+        font-family: $heading
+        font-weight: 300
+        font-size: 28px
+        font-style: normal
+        text-align: right
+        color: $primary-grey
+
+        +m('optional')
+            font-weight: 700
+            font-size: 21px
+            color: $primary-softgrey
+
+
+        +m('nofloat')
+            float: none
+            display: block
+            margin-top: 8px
+            margin-bottom: 24px
+            text-align: left
+
+
+    +e('item-price-component')
+        // Spacing
+        margin-left: 2px
+        margin-right: 2px
+        vertical-align: top
+        // Styles
+        font-size: 19px
+
+        +m('optional')
+            font-size: 14px
+
+
+
+    +e('item-note')
+        // Flex Sizing
+        // flex: 100%
+        display: block
+        // Styles
+        font-family: $heading
+        font-weight: 300
+        font-size: 19px
+        color: $primary-grey
+
+
+
+    +e('item-desc')
+        // Flex Sizing
+        // flex: 100%
+        // Spacing
+        margin-top: 32px
+        margin-bottom: 0
+        // Styles
+        font-family: $body
+        font-weight: 400
+        font-size: 19px
+        text-indent: 16px
+        line-height: 1.6
+        color: $softblack
+
+
+    +e('options')
+        // Flex Sizing
+        // flex: 100%
+        display: block
+        // Spacing
+        margin-top: 24px
+        margin-bottom: 16px
+        // Styles
+        font-family: $heading
+        font-weight: 700
+        font-size: 14px
+        color: $primary-grey
