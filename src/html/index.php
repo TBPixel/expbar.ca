@@ -549,7 +549,7 @@
                     <?php
                         require_once '../private/fb-app.php';
 
-                        $request_url = 'https://graph.facebook.com/expbar/events?fields=name,start_time,cover&limit=3&' . $access_token;
+                        $request_url = 'https://graph.facebook.com/expbar/events?fields=name,start_time,cover&' . $access_token;
                         $result = file_get_contents ( $request_url );
 
                         $result = json_decode ( $result );
@@ -623,7 +623,7 @@
                 
                 <!-- List Items -->
                 <ul class="footer__list">
-                    <li class="footer__item"><a class="footer__link" href="https://www.bcchf.ca/">EXP Boost w/ BC Children's Hospital Foundation</a></li>
+                    <li class="footer__item"><a class="footer__link" href="https://www.bcchf.ca/">EXP Boost</a></li>
                     <li class="footer__item"><a class="footer__link" href="http://extra-life.org/">Extra Life</a></li>
                 </ul>
             </section>

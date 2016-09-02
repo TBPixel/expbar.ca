@@ -28,7 +28,8 @@
     +e('group-heading')
         // Spacing
         margin-top: 0
-        margin-bottom: 96px
+        margin-bottom: 48px
+        padding-top: 96px
         // Styles
         font-family: $heading
         font-weight: 300
@@ -86,6 +87,12 @@
                 content: ','
 
 
+        +m('center')
+            margin-left: auto
+            margin-right: auto
+            padding-right: 0
+
+
     +e('item-name')
         // Flex Sizing
         // flex: 1
@@ -108,6 +115,10 @@
 
         +m('choice')
             color: $softblack
+
+
+        +m('tutorial')
+            margin-bottom: 24px
 
 
 
@@ -189,3 +200,20 @@
         font-weight: 700
         font-size: 14px
         color: $primary-grey
+
+
+    +e('tutorial')
+        margin-bottom: 96px
+
+
+    +e('tutorial-desc')
+        margin-top: 0
+        margin-bottom: 48px
+        // Styles
+        font-family: $body
+        font-weight: 400
+        font-size: 19px
+        text-align: center
+        text-indent: 16px
+        line-height: 1.6
+        color: $softblack
