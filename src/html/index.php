@@ -407,7 +407,9 @@
                 <ul class="nav__list">
                     <!-- Nav Link Items -->
                     <li class="nav__item"><a class="nav__link" href="./">Home</a></li>
-                    <li class="nav__item"><a class="nav__link" href="./menu/" itemprop="menu">Menu</a></li>
+                    <li class="nav__item"><a class="nav__link" href="./specials/" itemprop="menu">Specials</a></li>
+                    <li class="nav__item"><a class="nav__link" href="./food/" itemprop="menu">Food</a></li>
+                    <li class="nav__item"><a class="nav__link" href="./drinks/" itemprop="menu">Drinks</a></li>
                 </ul>
             </nav>
         </header>

@@ -65,10 +65,7 @@
 
         @media only screen and (min-width: 1100px)
             flex: 0 1 50%
-
-        &:last-child
-            margin-bottom: 0
-
+            
 
         +m('optional')
             // flex: 100%
@@ -186,6 +183,9 @@
         text-indent: 16px
         line-height: 1.6
         color: $softblack
+
+        +m('italic')
+            font-style: italic
 
 
     +e('options')
