@@ -53,6 +53,8 @@
     -->
     <!-- CRITICAL CSS -->
     <style>
+        /* Inline of Navigation & Hero Area CSS Only */
+
         /* Body, Site Heading & Navigation */
         .body {
             margin: 0;
@@ -67,6 +69,8 @@
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
             width: 100%;
             /* Styles */
             background-color: #3F8FDD;
@@ -74,7 +78,7 @@
             /* Header Logo */
             .header__logo {
                 display: block;
-                margin: 4px 16px;
+                margin: 16px auto;
             }
             /* Header Logo SVG */
             .header__svg {
@@ -92,16 +96,24 @@
                 }
 
 
-            /* Navigation List */
+            /* Navigation */
+            .nav {
+                -webkit-box-flex: 100%;
+                    -ms-flex: 100%;
+                        flex: 100%;
+            }
+
             .nav__list {
                 margin-top: 0;
                 margin-bottom: 0;
                 padding-left: 0;
                 list-style: none;
+                text-align: center;
             }
                 /* Navigation List Item */
                 .nav__item {
                     display: inline-block;
+                    width: 25%;
                     position: relative;
                     color: #eaeff3;
                 }
@@ -142,6 +154,17 @@
                             text-decoration: none;
                             color: inherit;
                         }
+
+
+        /* Responsive Header Query */
+        @media only screen and (min-width: 440px) {
+
+            .header__logo { margin: 4px 16px; }
+
+            .nav { -webkit-box-flex: 1; -ms-flex: auto; flex: auto; }
+                .nav__list { text-align: left; }
+                    .nav__item { width: auto; }
+        }
     </style>
     <!-- Cache-able Stylesheet -->
     <link href="../css/styles.min.css" rel="preload" as="style" onload="this.rel='stylesheet'">

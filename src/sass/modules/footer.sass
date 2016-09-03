@@ -2,6 +2,7 @@
 .footer
     // Display
     display: flex
+    flex-wrap: wrap
     justify-content: space-around
     // Sizing
     width: 100%
@@ -10,6 +11,19 @@
     padding-bottom: 64px
     // Styling
     background-color: $black
+
+    @media only screen and (min-width: 640px)
+        flex-wrap: nowrap
+
+
+    +e('section')
+        flex: 100%
+        margin-bottom: 48px
+        text-align: center
+
+        @media only screen and (min-width: 640px)
+            margin-bottom: 0
+            text-align: left
 
     
     // Footer Lists

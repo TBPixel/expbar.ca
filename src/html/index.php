@@ -70,6 +70,8 @@
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
             width: 100%;
             /* Styles */
             background-color: #3F8FDD;
@@ -77,7 +79,7 @@
             /* Header Logo */
             .header__logo {
                 display: block;
-                margin: 4px 16px;
+                margin: 16px auto;
             }
             /* Header Logo SVG */
             .header__svg {
@@ -95,16 +97,24 @@
                 }
 
 
-            /* Navigation List */
+            /* Navigation */
+            .nav {
+                -webkit-box-flex: 100%;
+                    -ms-flex: 100%;
+                        flex: 100%;
+            }
+
             .nav__list {
                 margin-top: 0;
                 margin-bottom: 0;
                 padding-left: 0;
                 list-style: none;
+                text-align: center;
             }
                 /* Navigation List Item */
                 .nav__item {
                     display: inline-block;
+                    width: 25%;
                     position: relative;
                     color: #eaeff3;
                 }
@@ -284,6 +294,7 @@
                     -webkit-transition: -webkit-transform 128ms ease-in;
                     transition: -webkit-transform 128ms ease-in;
                     transition: transform 128ms ease-in;
+                    transition: transform 128ms ease-in, -webkit-transform 128ms ease-in;
                     transition: transform 128ms, -webkit-transform 128ms ease-in;
                 }
 
@@ -296,6 +307,17 @@
                         -webkit-transform: translateY(2px);
                                 transform: translateY(2px);
                     }
+
+
+        /* Responsive Header Query */
+        @media only screen and (min-width: 440px) {
+
+            .header__logo { margin: 4px 16px; }
+
+            .nav { -webkit-box-flex: 1; -ms-flex: auto; flex: auto; }
+                .nav__list { text-align: left; }
+                    .nav__item { width: auto; }
+        }
 
         
         /* Responsive Hero Query 1100px */

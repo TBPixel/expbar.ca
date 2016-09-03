@@ -45,17 +45,24 @@
         align-items: center
         // Sizing
         flex: 0 1 90%
-        height: 150px
+        height: auto
         // Spacing
         margin-left: 8px
         margin-right: 8px
         margin-bottom: 16px
+        padding-top: 16px
+        padding-bottom: 16px
         // Contain Link
         position: relative
         // Styles
         border: 1px solid $primary-lightgrey
         border-left: 4px solid $primary
         text-align: center
+
+        @media only screen and (min-width: 640px)
+            padding-top: 0
+            padding-bottom: 0
+            height: 150px
 
         // Modify Flex on larger screens
         @media only screen and (min-width: 1000px)
@@ -104,12 +111,15 @@
     // Section List Item Image
     +e('image')
         // Box Model
-        display: block
+        display: none
         // Spacing
         padding-right: 16px
         // Sizing
         width: auto
         height: 100%
+
+        @media only screen and (min-width: 640px)
+            display: block
 
 
     // Section List Item Date
@@ -131,6 +141,7 @@
     // Section List Item Text
     +e('text')
         flex: 1
+        padding-right: 16px
         // Styles
         font-family: $body
         font-weight: 400
@@ -138,11 +149,14 @@
         text-align: center
         color: $primary-grey
 
+        @media only screen and (min-width: 640px)
+            padding-right: 0
+
 
 // Section List Item Icon
 .material-icons.events__icon
     // Box model
-    display: block
+    display: none
     // Flex Item can Grow
     flex: 0
     // Spacing
@@ -152,3 +166,6 @@
     text-align: right
     font-size: 48px
     color: $primary-softgrey
+
+    @media only screen and (min-width: 640px)
+        display: block
