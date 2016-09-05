@@ -66,23 +66,27 @@
         /* Header */
         .header {
             /* Sizing & Display Model */
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
             width: 100%;
             /* Styles */
             background-color: #3F8FDD;
         }
+        .header::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
             /* Header Logo */
             .header__logo {
                 display: block;
-                margin: 16px auto;
             }
             /* Header Logo SVG */
             .header__svg {
                 display: block;
+                margin-right: auto;
+                margin-left: auto;
+                padding-top: 16px;
+                padding-bottom: 16px;
+                width: 62.5px;
                 height: 30px;
                 stroke: #eaeff3;
                 fill: #eaeff3;
@@ -98,9 +102,13 @@
 
             /* Navigation */
             .nav {
-                -webkit-box-flex: 100%;
-                    -ms-flex: 100%;
-                        flex: 100%;
+                display: block;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                z-index: 2;
+                width: 100%;
+                background-color: #3F8FDD;
             }
 
             .nav__list {
@@ -113,7 +121,7 @@
                 /* Navigation List Item */
                 .nav__item {
                     display: inline-block;
-                    width: 25%;
+                    width: 50%;
                     position: relative;
                     color: #eaeff3;
                 }
@@ -156,12 +164,32 @@
                         }
 
 
-        /* Responsive Header Query */
+        /* Responsive Header Queries */
+        @media only screen and (min-width: 340px) {
+            .nav__item { width: 25%; }
+        }
+
         @media only screen and (min-width: 440px) {
 
-            .header__logo { margin: 4px 16px; }
+            .header__logo {
+                float: left;
+                margin: 4px 16px;
+            }
+                .header__svg {
+                    margin-right: 0;
+                    margin-left: 0;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                }
 
-            .nav { -webkit-box-flex: 1; -ms-flex: auto; flex: auto; }
+            .nav {
+                float: left;
+                position: relative;
+                bottom: auto;
+                left: auto;
+                width: auto;
+                background-color: transparent;
+            }
                 .nav__list { text-align: left; }
                     .nav__item { width: auto; }
         }

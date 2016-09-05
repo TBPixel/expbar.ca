@@ -67,23 +67,27 @@
         /* Header */
         .header {
             /* Sizing & Display Model */
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
             width: 100%;
             /* Styles */
             background-color: #3F8FDD;
         }
+        .header::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
             /* Header Logo */
             .header__logo {
                 display: block;
-                margin: 16px auto;
             }
             /* Header Logo SVG */
             .header__svg {
                 display: block;
+                margin-right: auto;
+                margin-left: auto;
+                padding-top: 16px;
+                padding-bottom: 16px;
+                width: 62.5px;
                 height: 30px;
                 stroke: #eaeff3;
                 fill: #eaeff3;
@@ -99,9 +103,13 @@
 
             /* Navigation */
             .nav {
-                -webkit-box-flex: 100%;
-                    -ms-flex: 100%;
-                        flex: 100%;
+                display: block;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                z-index: 2;
+                width: 100%;
+                background-color: #3F8FDD;
             }
 
             .nav__list {
@@ -114,7 +122,7 @@
                 /* Navigation List Item */
                 .nav__item {
                     display: inline-block;
-                    width: 25%;
+                    width: 50%;
                     position: relative;
                     color: #eaeff3;
                 }
@@ -160,24 +168,19 @@
 
         /* Landing Page Hero */
         .hero {
-            /* Layout */
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
             /* Spacing */
             padding-top: 64px;
             padding-bottom: 64px;
             /* Background */
             background-color: #3F8FDD;
         }
+        .hero::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
             /* Title Text for Landing Page Hero */
             .hero__title {
-                /* Flexbox Fill Parent */
-                -webkit-box-flex: 100%;
-                    -ms-flex: 100%;
-                        flex: 100%;
                 /* Spacing */
                 margin-top: 0;
                 margin-bottom: 48px;
@@ -190,10 +193,8 @@
             }
             /* Hero Image Container */
             .hero__image {
-                /* Flexbox Sizing */
-                -webkit-box-flex: 100%;
-                    -ms-flex: 100%;
-                        flex: 100%;
+                /* Sizing */
+                width: 100%;
                 /* Spacing */
                 padding-bottom: 48px;
                 /* Align svg contents to center */
@@ -214,19 +215,7 @@
             .hero__content {
                 /* Sizing */
                 box-sizing: border-box;
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: flex;
-                -webkit-box-orient: vertical;
-                -webkit-box-direction: normal;
-                    -ms-flex-direction: column;
-                        flex-direction: column;
-                -webkit-box-pack: center;
-                    -ms-flex-pack: center;
-                        justify-content: center;
-                -webkit-box-flex: 100%;
-                    -ms-flex: 100%;
-                        flex: 100%;
+                width: 100%;
                 /* Spacing */
                 padding-right: 16px;
                 padding-left: 16px;
@@ -261,9 +250,7 @@
 
             .hero__cta {
                 /* Fill new row of parent */
-                -webkit-box-flex: 100%;
-                    -ms-flex: 100%;
-                        flex: 100%;
+                width: 100%;
                 margin-top: 48px;
                 /* Positioning for Absolute Psuedo-element */
                 position: relative;
@@ -309,12 +296,32 @@
                     }
 
 
-        /* Responsive Header Query */
+        /* Responsive Header Queries */
+        @media only screen and (min-width: 340px) {
+            .nav__item { width: 25%; }
+        }
+
         @media only screen and (min-width: 440px) {
 
-            .header__logo { margin: 4px 16px; }
+            .header__logo {
+                float: left;
+                margin: 4px 16px;
+            }
+                .header__svg {
+                    margin-right: 0;
+                    margin-left: 0;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                }
 
-            .nav { -webkit-box-flex: 1; -ms-flex: auto; flex: auto; }
+            .nav {
+                float: left;
+                position: relative;
+                bottom: auto;
+                left: auto;
+                width: auto;
+                background-color: transparent;
+            }
                 .nav__list { text-align: left; }
                     .nav__item { width: auto; }
         }
@@ -325,29 +332,37 @@
 
             /* Hero Image Area */
             .hero__image {
-                /* Flexbox Sizing */
-                -webkit-box-flex: 40%;
-                -ms-flex: 40%;
-                flex: 40%;
+                /* Sizing */
+                float: left;
+                width: 40%;
                 /* Spacing */
                 padding-bottom: 0;
             }
                 .hero__svg {
                     /* Sizing */
-                    width: 60%;
-                    height: 60%;
+                    width: 456px;
+                    height: 456px;
+                    max-width: 60%;
+                    max-height: 60%;
                 }
 
 
             .hero__content {
-                /* Flex Sizing */
-                -webkit-box-flex: 60%;
-                        -ms-flex: 60%;
-                            flex: 60%;
+                /* Sizing */
+                float: left;
+                width: 40%;
             }
                 .hero__heading { text-align: left; }
                 .hero__text {
                     margin: 0;
+                }
+
+            .hero__cta {
+                float: left;
+                width: 100%;
+            }
+                .hero__cta-button {
+                    max-width: 90%;
                 }
         }
     </style>
