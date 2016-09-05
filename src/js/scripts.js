@@ -160,6 +160,3 @@ var eventData = {
         console.log ( eventData.list );
     },
 };
-
-// Fetch and add event data to page
-// eventData.getData ( eventData.appendData );

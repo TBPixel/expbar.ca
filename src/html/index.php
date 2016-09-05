@@ -221,12 +221,12 @@
                 /* Spacing */
                 padding-right: 16px;
                 padding-left: 16px;
-            }
+                }
                 /* Hero Text Content Heading */
                 .hero__heading {
                     /* Spacing */
                     margin-top: 0;
-                    margin-bottom: 32px;
+                    margin-bottom: 48px;
                     /* Styles */
                     font-family: "Lato", sans-serif;
                     font-weight: 300;
@@ -237,7 +237,10 @@
                 /* Hero Text Content Paragraph */
                 .hero__text {
                     /* Clear Margins */
-                    margin: 0 auto;
+                    margin-top: 0;
+                    margin-right: auto;
+                    margin-bottom: 48px;
+                    margin-left: auto;
                     /* Sizing Restrictions */
                     max-width: 550px;
                     /* Styles */
@@ -251,9 +254,6 @@
 
 
             .hero__cta {
-                /* Fill new row of parent */
-                width: 100%;
-                margin-top: 48px;
                 /* Positioning for Absolute Psuedo-element */
                 position: relative;
             }
@@ -354,20 +354,18 @@
             .hero__content {
                 /* Sizing */
                 float: left;
-                width: 40%;
+                width: 60%;
             }
                 .hero__heading { text-align: left; }
                 .hero__text {
-                    margin: 0;
+                    margin-right: 0;
+                    margin-left: 0;
                 }
-
-            .hero__cta {
-                float: left;
-                width: 100%;
-            }
+            
+            .hero__cta { max-width: 550px; }
                 .hero__cta-button {
                     max-width: 90%;
-                }
+                    }
         }
     </style>
     <!-- Cache-able Stylesheet -->
@@ -575,19 +573,19 @@
                     Community to the most tactical Settler of Catan players.
 
                     Join some friends for a fun night of thematic food &amp; drinks, tabletop treachery or even the perilous cliffs of Rainbow Road!</p>
-                </article>
 
-                <!-- Menu Call to Action -->
-                <div class="hero__cta">
-                    <a class="hero__cta-button" href="./specials/">View our specials</a>
-                </div>
+                    <!-- Menu Call to Action -->
+                    <div class="hero__cta">
+                        <a class="hero__cta-button" href="./specials/">View our specials</a>
+                    </div>
+                </article>
             </section>
 
             <!-- Board Games Listing -->
             <section class="boardgames">
 
                 <!-- Board Games Title -->
-                <h2 class="boardgames__title">Enjoy a game while we cook your meal</h2>
+                <h2 class="boardgames__title">Games we have on tap</h2>
 
                 <!-- 20 Side Die Image -->
                 <div class="boardgames__image">
@@ -669,7 +667,7 @@
             <section class="events">
 
                 <!-- Events Section Title -->
-                <h2 class="events__title">Join the community with one of our events</h2>
+                <h2 class="events__title">Upcoming Events</h2>
                 
                 <!-- List of Ongoing Events -->
                 <ul class="events__list">
