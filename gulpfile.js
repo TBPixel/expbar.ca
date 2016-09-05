@@ -51,7 +51,7 @@
                 includePaths: ['src/sass/']
             }) )
             .pipe( autoprefixer ({
-                browsers: ['last 2 versions', 'ie >= 10', '> 1%'],
+                browsers: ['last 2 versions', 'ie 11', '> 1%'],
                 cascade: false
             }) )
             .pipe ( extname ( 'min.css' ) )

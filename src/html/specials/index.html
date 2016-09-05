@@ -67,6 +67,10 @@
         .header {
             /* Sizing & Display Model */
             width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2;
             /* Styles */
             background-color: #3F8FDD;
         }
@@ -78,6 +82,9 @@
             /* Header Logo */
             .header__logo {
                 display: block;
+                width: 0;
+                height: 0;
+                overflow: hidden;
             }
             /* Header Logo SVG */
             .header__svg {
@@ -103,12 +110,7 @@
             /* Navigation */
             .nav {
                 display: block;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                z-index: 2;
                 width: 100%;
-                background-color: #3F8FDD;
             }
 
             .nav__list {
@@ -171,25 +173,27 @@
 
         @media only screen and (min-width: 440px) {
 
-            .header__logo {
-                float: left;
-                margin: 4px 16px;
-            }
-                .header__svg {
-                    margin-right: 0;
-                    margin-left: 0;
-                    padding-top: 0;
-                    padding-bottom: 0;
-                }
-
-            .nav {
-                float: left;
+            .header {
                 position: relative;
                 bottom: auto;
                 left: auto;
                 width: auto;
-                background-color: transparent;
-            }
+                }
+
+                .header__logo {
+                    float: left;
+                    width: auto;
+                    height: auto;
+                    margin: 4px 16px;
+                    }
+                    .header__svg {
+                        margin-right: 0;
+                        margin-left: 0;
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        }
+
+
                 .nav__list { text-align: left; }
                     .nav__item { width: auto; }
         }

@@ -44,13 +44,12 @@
     +e('list')
         // Clear List Styles
         +r_list
+        // Box Model
+        display: flex
+        flex-wrap: wrap
+        justify-content: flex-start
         // Spacing
         padding-left: 0
-
-        &::after
-            content: ""
-            display: table
-            clear: both
 
 
         @media only screen and (min-width: 600px)
@@ -66,12 +65,12 @@
     +e('item')
         // Box Model
         box-sizing: border-box
-        float: left
         // Spacing
         margin-bottom: 96px
         padding-right: 0
         // Flex Sizing
-        width: 100%
+        flex: 0 1 100%
+        max-width: 100% // Hack for IE 11 - Doesn't respect box-sizing
 
 
         @media only screen and (min-width: 600px)
@@ -79,17 +78,16 @@
 
 
         @media only screen and (min-width: 1100px)
-            width: 50%
+            flex: 0 1 50%
+            max-width: 50% // Hack for IE 11 - Doesn't respect box-sizing
             
 
         +m('optional')
-            // flex: 100%
             padding-right: 0
             margin-bottom: 12px
 
 
         +m('choice')
-            // flex: 0 1 auto
             display: inline-block
             padding-right: 8px
             margin-bottom: 8px
@@ -106,8 +104,6 @@
 
 
     +e('item-name')
-        // Flex Sizing
-        // flex: 1
         display: inline-block
         // Spacing
         margin-top: 0
