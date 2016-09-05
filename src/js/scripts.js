@@ -68,10 +68,7 @@ function initMap()
 
 
 // Events Section of Page
-/*
-
-    JAVASCRIPT CODE TO BE USED IN DEMO ONLY
-
+// JAVASCRIPT CODE TO BE USED IN DEMO ONLY
     
 var eventData = {
     eventsDOM: document.querySelector ( '.events__list' ),
@@ -94,25 +91,30 @@ var eventData = {
 
     appendData: function () {
 
+        var months_abbreviated = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+
         // Loop over all events returend in the list
         Array.prototype.forEach.call ( eventData.list , function ( el, i ) {
 
             // Format Date
             var date = new Date ( el.start_time );
-            var formattedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();
+            var formattedDate = date.getDate () + ' ' + months_abbreviated [ date.getMonth() ];
 
 
             // Create Element Nodes
-            var list_el             =   document.createElement      ( 'LI' );
-            var list_el_a           =   document.createElement      ( 'A' );
+            var list_el                 =   document.createElement      ( 'LI' );
+            var list_el_a               =   document.createElement      ( 'A' );
 
-            var list_el_span        =   document.createElement      ( 'SPAN' );
-            var list_el_text        =   document.createTextNode     ( el.name );
+            var list_el_image           =   document.createElement      ( 'IMG' );
 
-            var list_el_image       =   document.createElement      ( 'IMG' );
+            var list_el_time            =   document.createElement      ( 'TIME' );
+            var list_el_time_text       =   document.createTextNode     ( formattedDate );
 
-            var list_el_time        =   document.createElement      ( 'TIME' );
-            var list_el_time_text   =   document.createTextNode     ( formattedDate );
+            var list_el_strong          =   document.createElement      ( 'STRONG' );
+            var list_el_text            =   document.createTextNode     ( el.name );
+
+            var list_el_icon            =   document.createElement      ( 'I' );
+            var list_el_icon_text       =   document.createTextNode     ( 'chevron_right' );
 
 
             // Set Element Attributes
@@ -122,29 +124,31 @@ var eventData = {
             list_el_time.setAttribute   ( 'datetime', el.start_time );
 
             // Set Element Classes
-            list_el.classList.add       ( 'events__item' );
-            list_el_a.classList.add     ( 'events__link' );
-            list_el_image.classList.add ( 'events__image' );
-            list_el_span.classList.add  ( 'events__text' );
-            list_el_time.classList.add  ( 'events__date' );
+            list_el.classList.add           ( 'events__item' );
+            list_el_a.classList.add         ( 'events__link' );
+            list_el_image.classList.add     ( 'events__image' );
+            list_el_strong.classList.add    ( 'events__text' );
+            list_el_time.classList.add      ( 'events__date' );
+            list_el_icon.classList.add      ( 'material-icons' );
+            list_el_icon.classList.add      ( 'events__icon' );
 
-
-            // Concatenate Elements
-            list_el.appendChild         ( list_el_a );
-
-            // Append Elements Inside Link
-            list_el_a.appendChild       ( list_el_image );
-            list_el_a.appendChild       ( list_el_span );
-            list_el_a.appendChild       ( list_el_time );
 
             // Append Text into Span
-            list_el_span.appendChild    ( list_el_text );
+            list_el_strong.appendChild  ( list_el_text );
 
             // Append Text into Time
             list_el_time.appendChild    ( list_el_time_text );
 
-            // Append Time Element outside of Link
+            // Append Text into Icon
+            list_el_icon.appendChild    ( list_el_icon_text );
+
+
+            // Concatenate Elements
+            list_el.appendChild         ( list_el_a );
+            list_el.appendChild         ( list_el_image );
             list_el.appendChild         ( list_el_time );
+            list_el.appendChild         ( list_el_strong );
+            list_el.appendChild         ( list_el_icon );
 
 
             // Append Final Elements to List
@@ -159,4 +163,3 @@ var eventData = {
 
 // Fetch and add event data to page
 // eventData.getData ( eventData.appendData );
-*/
