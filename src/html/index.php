@@ -774,6 +774,9 @@
 
         <!-- Site Footer -->
         <footer class="footer">
+            
+            <!-- Back to top button -->
+            <a class="footer__back-to-top" href="#"><i class="material-icons">keyboard_arrow_up</i></a>
 
             <!-- Charity List -->
             <section class="footer__section">

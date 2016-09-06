@@ -34,6 +34,29 @@
 
     // Init mapView
     mapView.init ();
+
+
+    // Override Back-to-Top button
+    var backToTop = {
+        button: document.querySelector ( '.footer__back-to-top' ),
+
+        scrollToTop: function ( e ) {
+            e.preventDefault ();
+            window.scrollTo ( 0, 0 );
+        },
+
+        addEventListener: function () {
+            backToTop.button.addEventListener ( 'click', function ( e ) { backToTop.scrollToTop ( e ); } );
+        },
+
+        init: function () {
+            if ( backToTop.button !== null ) { backToTop.addEventListener (); }
+            else return;
+        }
+    };
+
+    // Init backToTop
+    backToTop.init ();
     
 
     // Load Webfonts
