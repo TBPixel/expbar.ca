@@ -515,31 +515,6 @@
 </head>
 
 <body class="body">
-    <!-- Facebook Graph API Init -->
-    <!--
-    <script>
-    
-        JAVASCRIPT CODE TO BE USED IN DEMO ONLY
-
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : '199372583810994',
-                xfbml      : true,
-                version    : 'v2.7'
-            });
-            eventData.getData ();
-        };
-
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-
-    </script>
-    -->
 
     <!-- Page Wrapper -->
     <div class="wrapper">
