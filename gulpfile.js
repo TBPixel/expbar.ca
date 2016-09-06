@@ -20,7 +20,7 @@
         server.start ();
 
         // Watch for changes & Livereload 
-        gulp.watch ( ['dist/**/*.html', 'dist/css/*.{min.css,css}', 'dist/js/*.{min.js,js}', 'dist/images/**/*.{png,svg}'], function ( file ) {
+        gulp.watch ( ['dist/**/*.html', 'dist/css/*.{min.css,css}', 'dist/js/*.{min.js,js}', 'dist/images/**/*.{jpg,jpeg,png,svg}'], function ( file ) {
             server.notify.apply ( server, [ file ] );
         });
     });
@@ -74,7 +74,7 @@
     // Move Files
     gulp.task ( 'fileMove', function () {
 
-        return gulp.src ( 'src/images/**/*.{png,svg}' )
+        return gulp.src ( 'src/images/**/*.{jpg,jpeg,png,svg}' )
             .pipe ( plumber () )
             .pipe ( gulp.dest ( 'dist/images' ) );
     });

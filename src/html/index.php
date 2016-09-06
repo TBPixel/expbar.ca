@@ -71,7 +71,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 2;
+            z-index: 3; /* Places above all other elements on the page */
             /* Styles */
             background-color: #3F8FDD;
         }
@@ -171,10 +171,25 @@
         /* Landing Page Hero */
         .hero {
             /* Spacing */
-            padding-top: 64px;
-            padding-bottom: 64px;
+            padding-top: 128px;
+            padding-bottom: 128px;
+            /* Contain Before Psuedo */
+            position: relative;
+            z-index: 0;
             /* Background */
-            background-color: #3F8FDD;
+            background: url(./images/triforce-burger-expbar.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-color: black;
+            opacity: 0.4;
         }
         .hero::after {
             content: "";
@@ -186,6 +201,9 @@
                 /* Spacing */
                 margin-top: 0;
                 margin-bottom: 48px;
+                /* Z-Indexing */
+                position: relative;
+                z-index: 2;
                 /* Style & Alignment */
                 font-family: 'Baloo Da', cursive;
                 font-size: 48px;
@@ -199,6 +217,9 @@
                 width: 100%;
                 /* Spacing */
                 padding-bottom: 48px;
+                /* Z-Indexing */
+                position: relative;
+                z-index: 2;
                 /* Align svg contents to center */
                 text-align: center;
             }
@@ -221,12 +242,18 @@
                 /* Spacing */
                 padding-right: 16px;
                 padding-left: 16px;
+                /* Z-Indexing */
+                position: relative;
+                z-index: 2;
                 }
                 /* Hero Text Content Heading */
                 .hero__heading {
                     /* Spacing */
                     margin-top: 0;
                     margin-bottom: 48px;
+                    /* Z-Indexing */
+                    position: relative;
+                    z-index: 2;
                     /* Styles */
                     font-family: "Lato", sans-serif;
                     font-weight: 300;
@@ -243,6 +270,9 @@
                     margin-left: auto;
                     /* Sizing Restrictions */
                     max-width: 550px;
+                    /* Z-Indexing */
+                    position: relative;
+                    z-index: 2;
                     /* Styles */
                     font-family: "Open Sans", sans-serif;
                     font-weight: 400;
@@ -269,8 +299,7 @@
                     position: relative;
                     z-index: 1;
                     /* Style Container */
-                    border-bottom: 2px solid #5b9b84;
-                    background-color: #33DFA2;
+                    border: 2px solid #33DFA2;
                     /* Style Text */
                     font-family: "Lato", sans-serif;
                     font-weight: 700;
@@ -279,23 +308,29 @@
                     text-decoration: none;
                     text-transform: uppercase;
                     color: #f5f9f8;
-
-                    -webkit-transition: -webkit-transform 128ms ease-in;
-                    transition: -webkit-transform 128ms ease-in;
-                    transition: transform 128ms ease-in;
-                    transition: transform 128ms ease-in, -webkit-transform 128ms ease-in;
-                    transition: transform 128ms, -webkit-transform 128ms ease-in;
                 }
-
-                    /* Hover Effects */
-                    .hero__cta-button:hover,
-                    .hero__cta-button:focus,
-                    .hero__cta-button:active {
-                        border-color: #3F8FDD;
-                        will-change: transform;
-                        -webkit-transform: translateY(2px);
-                                transform: translateY(2px);
-                    }
+                    .hero__cta-button::before {
+                        content: '';
+                        /* Fill Parent */
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: -1;
+                        /* Background Color */
+                        background-color: #33DFA2;
+                        /* Animated Effect */
+                        opacity: 0;
+                        -webkit-transition: opacity 128ms ease-in;
+                        transition: opacity 128ms ease-in;
+                        }
+                        .hero__cta-button:hover::before,
+                        .hero__cta-button:focus::before,
+                        .hero__cta-button:active::before {
+                            will-change: opacity;
+                            opacity: 1;
+                            }
 
 
         /* Responsive Header Queries */
@@ -344,8 +379,8 @@
             }
                 .hero__svg {
                     /* Sizing */
-                    width: 456px;
-                    height: 456px;
+                    width: 222px;
+                    height: 222px;
                     max-width: 60%;
                     max-height: 60%;
                 }

@@ -3,6 +3,23 @@
     // Spacing
     padding-top: 64px
     padding-bottom: 64px
+    // Contain Psuedo Element
+    position: relative
+    z-index: 0
+    // Styles
+    background: url(../images/social-gaming-expbar.jpg) no-repeat center center fixed
+    background-size: cover
+
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 1
+        background-color: black
+        opacity: 0.4
 
     
     // Section Title / Heading
@@ -12,13 +29,16 @@
         margin-bottom: 48px
         padding-left: 32px
         padding-right: 32px
+        // Z-Indexies
+        position: relative
+        z-index: 2
         // Styling & Alignment
         font-family: $heading
         font-weight: 700
         font-size: 32px
         text-align: center
         letter-spacing: 1px
-        color: $primary-softgrey
+        color: $primary-white
 
 
     // Section Main Content
@@ -29,6 +49,9 @@
         margin: 0 auto 48px
         padding-left: 32px
         padding-right: 32px
+        // Z-Indexies
+        position: relative
+        z-index: 2
         // Sizing
         width: 840px
         max-width: 100%
@@ -37,5 +60,5 @@
         font-weight: 400
         font-size: 21px
         text-indent: 16px
-        line-height: 1.6
-        color: $primary-grey
+        line-height: 34px
+        color: $primary-white
