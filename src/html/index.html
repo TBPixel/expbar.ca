@@ -823,7 +823,11 @@
                     'GET',
                     {"fields":"name,start_time,cover"},
                     function ( response ) {
-                        eventData.list = response.data;
+
+                        var array = response.data;
+                        array.reverse ();
+
+                        eventData.list = array;
                         eventData.appendData ();
                     }
                 );

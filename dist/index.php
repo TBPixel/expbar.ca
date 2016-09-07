@@ -10,6 +10,8 @@
                         
                         $array = $result->data;
 
+                        $array = array_reverse ( $array );
+
                         foreach ( $array as $value )
                         {
                             if ( (time () - (60 * 60 * 24) ) > strtotime ( $value->start_time ) ) { continue; }
