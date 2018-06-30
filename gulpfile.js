@@ -19,7 +19,7 @@
         var server = liveserver.static ( 'dist/' );
         server.start ();
 
-        // Watch for changes & Livereload 
+        // Watch for changes & Livereload
         gulp.watch ( ['dist/**/*.html', 'dist/css/*.{min.css,css}', 'dist/js/*.{min.js,js}', 'dist/images/**/*.{jpg,jpeg,png,svg}'], function ( file ) {
             server.notify.apply ( server, [ file ] );
         });
@@ -42,7 +42,7 @@
 
     // Styles Task
     gulp.task ( 'styles', function () {
-        
+
         // Read Sass index file & push compiled css to css
         return gulp.src ( 'src/sass/styles.scss' )
             .pipe ( plumber () )
@@ -96,6 +96,8 @@
         gulp.watch ( 'src/images/**/*.{png,svg}', ['fileMove'] );
     });
 
+    gulp.task( 'build', ['htmlminify', 'styles', 'scripts', 'fileMove'] )
+
     // Run Gulp Task
-    gulp.task ( 'default', ['htmlminify', 'styles', 'scripts', 'fileMove', 'watch'] );
+    gulp.task ( 'default', ['build', 'watch'] );
 }) ();
